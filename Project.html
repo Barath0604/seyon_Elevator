@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Projects | Elevate Engineering</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0F52BA", secondary: "#5D8AA8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      .project-card:hover .hover-overlay {
+      opacity: 1;
+      }
+      .project-card:hover img {
+      transform: scale(1.05);
+      }
+      .modal {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      }
+      .modal.active {
+      opacity: 1;
+      visibility: visible;
+      }
+      input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      }
+      input[type="range"] {
+      appearance: none;
+      -webkit-appearance: none;
+      height: 4px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      outline: none;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background-color: #0F52BA;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      .custom-select {
+      position: relative;
+      }
+      .custom-select-options {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      }
+      .custom-select.active .custom-select-options {
+      display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+     <!-- Header Navigation -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+>
+        <div class="flex items-center">
+          <a href="#" class="flex items-center space-x-2">
+            <img src="Images/logo1.jpeg" alt="ElevaTech Logo" class="h-16 w-auto" />
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gray-300 font-medium"
+            >Home</a
+          >
+          <a href="about.html" class="text-white hover:text-gray-300 font-medium"
+            >About</a
+          >
+          <a href="Services.html" class="text-white hover:text-gray-300 font-medium"
+            >Services</a
+          >
+          <a href="Project.html" class="text-white hover:text-gray-300 font-medium"
+            >Projects</a
+          >
+          <a href="contact.html" class="text-white hover:text-gray-300 font-medium"
+            >Contact</a
+          >
+        </nav>
+        <div>
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+          >
+            Request Quote
+          </button>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="text-white w-10 h-10 flex items-center justify-center"
+          >
+            <i class="ri-menu-line ri-2x"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-4">
+          <nav class="flex flex-col space-y-4">
+            <a
+              href="index.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >About</a
+            >
+            <a
+              href="Services.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Services</a
+            >
+            <a
+              href="Project.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Projects</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="relative">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20elevator%20installation%20in%20a%20luxury%20high-rise%20building%20with%20glass%20walls%2C%20showing%20technical%20expertise%2C%20with%20a%20gradient%20blue%20overlay%20on%20the%20left%20side%20fading%20to%20transparent%20on%20the%20right%2C%20clean%20architectural%20lines%2C%20high-quality%20photography%20style&width=1920&height=600&seq=1&orientation=landscape');"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our Projects
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Take a look at the vertical solutions we've built across industries.
+          </p>
+          <div class="flex space-x-4">
+            <button
+              class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+            >
+              View Portfolio
+            </button>
+            <button
+              class="bg-transparent border border-white text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-white/10 transition"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Filter Section -->
+    <section class="bg-white py-6 border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0"
+        >
+          <div class="flex flex-wrap items-center gap-4">
+            <div class="custom-select w-40">
+              <button
+                id="type-select-btn"
+                class="w-full flex items-center justify-between px-4 py-2 bg-gray-100 !rounded-button text-gray-700 whitespace-nowrap"
+              >
+                <span>Elevator Type</span>
+                <i class="ri-arrow-down-s-line ri-lg"></i>
+              </button>
+              <div
+                class="custom-select-options bg-white shadow-lg !rounded-button mt-1 py-2 border"
+              >
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  All Types
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Passenger
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Freight
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Home Lift
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Panoramic
+                </div>
+              </div>
+            </div>
+            <div class="custom-select w-40">
+              <button
+                id="industry-select-btn"
+                class="w-full flex items-center justify-between px-4 py-2 bg-gray-100 !rounded-button text-gray-700 whitespace-nowrap"
+              >
+                <span>Industry</span>
+                <i class="ri-arrow-down-s-line ri-lg"></i>
+              </button>
+              <div
+                class="custom-select-options bg-white shadow-lg !rounded-button mt-1 py-2 border"
+              >
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  All Industries
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Commercial
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Residential
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Industrial
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Healthcare
+                </div>
+              </div>
+            </div>
+            <div class="custom-select w-40">
+              <button
+                id="location-select-btn"
+                class="w-full flex items-center justify-between px-4 py-2 bg-gray-100 !rounded-button text-gray-700 whitespace-nowrap"
+              >
+                <span>Location</span>
+                <i class="ri-arrow-down-s-line ri-lg"></i>
+              </button>
+              <div
+                class="custom-select-options bg-white shadow-lg !rounded-button mt-1 py-2 border"
+              >
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  All Locations
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  North America
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Europe
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Asia
+                </div>
+                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Middle East
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="custom-select w-40">
+            <button
+              id="sort-select-btn"
+              class="w-full flex items-center justify-between px-4 py-2 bg-gray-100 !rounded-button text-gray-700 whitespace-nowrap"
+            >
+              <span>Sort By</span>
+              <i class="ri-arrow-down-s-line ri-lg"></i>
+            </button>
+            <div
+              class="custom-select-options bg-white shadow-lg !rounded-button mt-1 py-2 border"
+            >
+              <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                Newest First
+              </div>
+              <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                Oldest First
+              </div>
+              <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                Project Size
+              </div>
+              <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                Alphabetical
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Grid -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=modern%20glass%20panoramic%20elevator%20in%20a%20luxury%20shopping%20mall%20with%20high%20ceilings%2C%20clean%20architectural%20design%2C%20bright%20lighting%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=2&orientation=landscape"
+                alt="Westfield Shopping Center Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="1"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Panoramic</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Commercial</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Westfield Shopping Center
+              </h3>
+              <p class="text-gray-600 mb-3">San Francisco, California</p>
+              <p class="text-gray-700 line-clamp-2">
+                A series of 12 panoramic glass elevators installed throughout
+                this premium shopping destination, offering both functionality
+                and aesthetic appeal.
+              </p>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=high-speed%20passenger%20elevator%20in%20a%20modern%20office%20skyscraper%2C%20sleek%20stainless%20steel%20interior%20with%20digital%20display%20panel%2C%20professional%20lighting%2C%20clean%20architectural%20design%2C%20neutral%20background&width=600&height=400&seq=3&orientation=landscape"
+                alt="Millennium Tower Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="2"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >High-Speed</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Commercial</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Millennium Tower</h3>
+              <p class="text-gray-600 mb-3">Chicago, Illinois</p>
+              <p class="text-gray-700 line-clamp-2">
+                A complex of 8 high-speed elevators capable of traveling at
+                10m/s, serving 78 floors with advanced destination dispatch
+                system.
+              </p>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=industrial%20freight%20elevator%20in%20a%20manufacturing%20facility%2C%20heavy-duty%20steel%20construction%2C%20large%20capacity%2C%20industrial%20lighting%2C%20clean%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=4&orientation=landscape"
+                alt="Boeing Manufacturing Plant Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="3"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Freight</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Industrial</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Boeing Manufacturing Plant
+              </h3>
+              <p class="text-gray-600 mb-3">Seattle, Washington</p>
+              <p class="text-gray-700 line-clamp-2">
+                Heavy-duty freight elevators designed to transport aircraft
+                components with a capacity of 10,000 kg, featuring oversized
+                doors and reinforced cabins.
+              </p>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=luxury%20residential%20elevator%20in%20a%20high-end%20apartment%20building%2C%20elegant%20wood%20paneling%2C%20mirror%20accents%2C%20soft%20lighting%2C%20sophisticated%20design%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=5&orientation=landscape"
+                alt="The Residences at Park Avenue Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="4"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Passenger</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Residential</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                The Residences at Park Avenue
+              </h3>
+              <p class="text-gray-600 mb-3">New York City, New York</p>
+              <p class="text-gray-700 line-clamp-2">
+                Luxury residential elevators featuring custom wood paneling,
+                smart access control, and whisper-quiet operation for this
+                premium apartment complex.
+              </p>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=hospital%20medical%20elevator%20with%20stretcher%20capacity%2C%20clean%20stainless%20steel%20interior%2C%20wide%20doors%2C%20bright%20lighting%2C%20medical%20facility%20setting%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=6&orientation=landscape"
+                alt="Memorial Hospital Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="5"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Medical</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Healthcare</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Memorial Hospital</h3>
+              <p class="text-gray-600 mb-3">Boston, Massachusetts</p>
+              <p class="text-gray-700 line-clamp-2">
+                Specialized medical elevators with oversized cabins for patient
+                beds, antimicrobial surfaces, and emergency power backup
+                systems.
+              </p>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=modern%20home%20elevator%20in%20a%20luxury%20villa%2C%20compact%20design%2C%20glass%20and%20wood%20finishes%2C%20elegant%20lighting%2C%20residential%20setting%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=7&orientation=landscape"
+                alt="Malibu Beach House Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="6"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Home Lift</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Residential</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Malibu Beach House</h3>
+              <p class="text-gray-600 mb-3">Malibu, California</p>
+              <p class="text-gray-700 line-clamp-2">
+                Custom pneumatic vacuum elevator with 360° glass enclosure,
+                providing panoramic ocean views while connecting three floors of
+                this luxury residence.
+              </p>
+            </div>
+          </div>
+          <!-- Project 7 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=historic%20building%20elevator%20renovation%2C%20combining%20classic%20design%20with%20modern%20technology%2C%20brass%20details%2C%20restored%20vintage%20cage%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=8&orientation=landscape"
+                alt="Grand Central Terminal Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="7"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Historic</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Commercial</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Grand Central Terminal</h3>
+              <p class="text-gray-600 mb-3">New York City, New York</p>
+              <p class="text-gray-700 line-clamp-2">
+                Restoration of 6 historic elevators, preserving original brass
+                details and cage design while upgrading mechanical systems to
+                modern safety standards.
+              </p>
+            </div>
+          </div>
+          <!-- Project 8 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=outdoor%20glass%20observation%20elevator%20on%20a%20skyscraper%20exterior%2C%20panoramic%20views%20of%20city%20skyline%2C%20sleek%20modern%20design%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=9&orientation=landscape"
+                alt="CN Tower Observation Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="8"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Observation</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Tourism</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">CN Tower</h3>
+              <p class="text-gray-600 mb-3">Toronto, Canada</p>
+              <p class="text-gray-700 line-clamp-2">
+                External glass observation elevators traveling at 6m/s with
+                panoramic views, featuring specialized wind resistance and
+                safety systems for this iconic landmark.
+              </p>
+            </div>
+          </div>
+          <!-- Project 9 -->
+          <div
+            class="project-card bg-white shadow-sm rounded-lg overflow-hidden group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://readdy.ai/api/search-image?query=modern%20hotel%20elevator%20lobby%20with%20multiple%20elevator%20doors%2C%20luxury%20marble%20finishes%2C%20elegant%20lighting%2C%20high-end%20hotel%20setting%2C%20professional%20photography%20with%20neutral%20background&width=600&height=400&seq=10&orientation=landscape"
+                alt="Ritz-Carlton Hotel Elevator"
+                class="w-full h-full object-cover object-top transition-transform duration-500"
+              />
+              <div
+                class="hover-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300"
+              >
+                <button
+                  class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+                  data-project="9"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                  >Passenger</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                  >Hospitality</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Ritz-Carlton Hotel</h3>
+              <p class="text-gray-600 mb-3">Dubai, UAE</p>
+              <p class="text-gray-700 line-clamp-2">
+                Luxury hotel elevator system featuring marble interiors, smart
+                mirror displays, and integrated entertainment systems for this
+                5-star property.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+          <nav class="flex items-center space-x-1">
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100"
+            >
+              <i class="ri-arrow-left-s-line ri-lg"></i>
+            </button>
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white"
+            >
+              1
+            </button>
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100"
+            >
+              2
+            </button>
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100"
+            >
+              3
+            </button>
+            <span
+              class="w-10 h-10 flex items-center justify-center text-gray-600"
+              >...</span
+            >
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100"
+            >
+              8
+            </button>
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100"
+            >
+              <i class="ri-arrow-right-s-line ri-lg"></i>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">What Our Clients Say</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hear from the businesses and organizations that have trusted us with
+            their vertical transportation needs.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="flex overflow-x-hidden" id="testimonial-slider">
+            <div
+              class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4"
+            >
+              <div class="bg-gray-50 p-8 rounded-lg h-full">
+                <div class="flex items-center mb-6">
+                  <i class="ri-double-quotes-l ri-3x text-primary/20"></i>
+                </div>
+                <p class="text-gray-700 mb-6">
+                  "The team at Elevate Engineering delivered our complex project
+                  on time and on budget. The high-speed elevators they installed
+                  have been running flawlessly for over two years, and their
+                  maintenance service is exceptional."
+                </p>
+                <div class="flex items-center">
+                  <div
+                    class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-user-3-line ri-lg text-gray-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Michael Richardson</h4>
+                    <p class="text-gray-600 text-sm">
+                      Facilities Director, Millennium Tower
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4"
+            >
+              <div class="bg-gray-50 p-8 rounded-lg h-full">
+                <div class="flex items-center mb-6">
+                  <i class="ri-double-quotes-l ri-3x text-primary/20"></i>
+                </div>
+                <p class="text-gray-700 mb-6">
+                  "The custom freight elevators designed for our manufacturing
+                  plant have significantly improved our operational efficiency.
+                  Their engineering team understood our unique requirements and
+                  delivered a solution that exceeded our expectations."
+                </p>
+                <div class="flex items-center">
+                  <div
+                    class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-user-3-line ri-lg text-gray-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Jennifer Lawson</h4>
+                    <p class="text-gray-600 text-sm">
+                      Operations Manager, Boeing
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4"
+            >
+              <div class="bg-gray-50 p-8 rounded-lg h-full">
+                <div class="flex items-center mb-6">
+                  <i class="ri-double-quotes-l ri-3x text-primary/20"></i>
+                </div>
+                <p class="text-gray-700 mb-6">
+                  "The panoramic elevators installed in our shopping center have
+                  become an architectural highlight. Visitors frequently comment
+                  on their smooth operation and elegant design. Working with
+                  Elevate Engineering was a pleasure from concept to
+                  completion."
+                </p>
+                <div class="flex items-center">
+                  <div
+                    class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-user-3-line ri-lg text-gray-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">David Chen</h4>
+                    <p class="text-gray-600 text-sm">
+                      Property Manager, Westfield Shopping Center
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4"
+            >
+              <div class="bg-gray-50 p-8 rounded-lg h-full">
+                <div class="flex items-center mb-6">
+                  <i class="ri-double-quotes-l ri-3x text-primary/20"></i>
+                </div>
+                <p class="text-gray-700 mb-6">
+                  "The restoration of our historic elevators was handled with
+                  incredible attention to detail. Elevate Engineering managed to
+                  preserve the vintage aesthetic while incorporating modern
+                  safety features and technology. A remarkable achievement."
+                </p>
+                <div class="flex items-center">
+                  <div
+                    class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-user-3-line ri-lg text-gray-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Sophia Martinez</h4>
+                    <p class="text-gray-600 text-sm">
+                      Historic Preservation Director, Grand Central
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8">
+            <div class="flex space-x-2">
+              <button
+                class="w-3 h-3 rounded-full bg-primary"
+                data-slide="0"
+              ></button>
+              <button
+                class="w-3 h-3 rounded-full bg-gray-300"
+                data-slide="1"
+              ></button>
+              <button
+                class="w-3 h-3 rounded-full bg-gray-300"
+                data-slide="2"
+              ></button>
+              <button
+                class="w-3 h-3 rounded-full bg-gray-300"
+                data-slide="3"
+              ></button>
+            </div>
+          </div>
+          <button
+            class="absolute top-1/2 left-4 transform -translate-y-1/2 w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-100"
+            id="prev-testimonial"
+          >
+            <i class="ri-arrow-left-s-line ri-lg"></i>
+          </button>
+          <button
+            class="absolute top-1/2 right-4 transform -translate-y-1/2 w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-100"
+            id="next-testimonial"
+          >
+            <i class="ri-arrow-right-s-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-900 relative">
+      <div
+        class="absolute inset-0 opacity-20"
+        style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20blueprint%20or%20technical%20drawing%20of%20elevator%20components%2C%20blue%20tint%2C%20faded%20background%20for%20text%20overlay%2C%20engineering%20concept&width=1920&height=600&seq=11&orientation=landscape'); background-size: cover; background-position: center;"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Have a Project in Mind?
+        </h2>
+        <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+          From concept to completion, we deliver custom elevator solutions
+          tailored to your specific requirements. Let's discuss how we can
+          elevate your next project.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            class="bg-primary text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-primary/90 transition"
+          >
+            Request a Quote
+          </button>
+          <button
+            class="bg-transparent border border-white text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-white/10 transition"
+          >
+            Contact Our Team
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >logo</a
+            >
+            <p class="text-gray-400 mb-6">
+              Elevating standards in vertical transportation since 1985.
+              Providing innovative elevator solutions for commercial,
+              residential, and industrial applications.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html" class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-400 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="Services.html" class="text-gray-400 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="Project.html" class="text-gray-400 hover:text-white transition"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="text-gray-400 hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >New Installation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Modernization</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Maintenance</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Repair</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Consulting</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Safety Inspection</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Elevator Avenue, Suite 500<br />Chicago, IL 60601,
+                  USA</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+1 (312) 555-7890</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">info@elevateengineering.com</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h4 class="text-sm font-semibold mb-3">24/7 Emergency Service</h4>
+              <p class="text-gray-400">+1 (800) 555-0911</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 Elevate Engineering. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Privacy Policy</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Terms of Service</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Sitemap</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Project Detail Modal -->
+    <div
+      id="project-modal"
+      class="modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-0"
+    >
+      <div class="absolute inset-0 bg-black/70" id="modal-overlay"></div>
+      <div
+        class="relative bg-white w-full max-w-6xl max-h-[90vh] overflow-auto rounded-lg shadow-xl"
+      >
+        <button
+          id="close-modal"
+          class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-700 z-10"
+        >
+          <i class="ri-close-line ri-lg"></i>
+        </button>
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-6 lg:p-8 order-2 lg:order-1">
+            <h2 class="text-2xl font-bold mb-2" id="modal-title">
+              Westfield Shopping Center
+            </h2>
+            <div class="flex flex-wrap gap-2 mb-4" id="modal-tags">
+              <span
+                class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full"
+                >Panoramic</span
+              >
+              <span
+                class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium !rounded-full"
+                >Commercial</span
+              >
+            </div>
+            <p class="text-gray-600 mb-6" id="modal-location">
+              San Francisco, California
+            </p>
+            <div class="mb-8">
+              <h3 class="text-lg font-semibold mb-3">Project Overview</h3>
+              <p class="text-gray-700 mb-4" id="modal-description">
+                A series of 12 panoramic glass elevators installed throughout
+                this premium shopping destination, offering both functionality
+                and aesthetic appeal. The project involved complex integration
+                with the existing structure while maintaining the center's
+                operations.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded">
+                  <p class="text-sm text-gray-500 mb-1">Client</p>
+                  <p class="font-medium" id="modal-client">
+                    Westfield Corporation
+                  </p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                  <p class="text-sm text-gray-500 mb-1">Completion Date</p>
+                  <p class="font-medium" id="modal-date">March 2023</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                  <p class="text-sm text-gray-500 mb-1">Project Duration</p>
+                  <p class="font-medium" id="modal-duration">8 months</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                  <p class="text-sm text-gray-500 mb-1">Project Value</p>
+                  <p class="font-medium" id="modal-value">$4.2 million</p>
+                </div>
+              </div>
+            </div>
+            <div class="mb-8">
+              <h3 class="text-lg font-semibold mb-3">
+                Technical Specifications
+              </h3>
+              <div class="border rounded-lg overflow-hidden">
+                <table class="w-full text-left">
+                  <tbody>
+                    <tr class="border-b">
+                      <td class="px-4 py-3 bg-gray-50 font-medium">
+                        Elevator Type
+                      </td>
+                      <td class="px-4 py-3" id="modal-type">Panoramic Glass</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="px-4 py-3 bg-gray-50 font-medium">Capacity</td>
+                      <td class="px-4 py-3" id="modal-capacity">
+                        1,600 kg / 21 persons
+                      </td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="px-4 py-3 bg-gray-50 font-medium">Speed</td>
+                      <td class="px-4 py-3" id="modal-speed">1.75 m/s</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="px-4 py-3 bg-gray-50 font-medium">
+                        Travel Height
+                      </td>
+                      <td class="px-4 py-3" id="modal-height">45 meters</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="px-4 py-3 bg-gray-50 font-medium">
+                        Number of Stops
+                      </td>
+                      <td class="px-4 py-3" id="modal-stops">5 floors</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 bg-gray-50 font-medium">
+                        Drive System
+                      </td>
+                      <td class="px-4 py-3" id="modal-drive">
+                        Machine Room-Less Gearless Traction
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mb-8">
+              <h3 class="text-lg font-semibold mb-3">Challenges & Solutions</h3>
+              <div class="bg-gray-50 p-6 rounded-lg" id="modal-challenges">
+                <p class="mb-4">
+                  <span class="font-medium">Challenge:</span> Installing glass
+                  elevators in an operational shopping center without disrupting
+                  business activities.
+                </p>
+                <p class="mb-4">
+                  <span class="font-medium">Solution:</span> Implemented a
+                  phased installation approach with most work conducted during
+                  off-hours. Custom hoistway enclosures were pre-fabricated
+                  off-site to minimize on-site construction time.
+                </p>
+                <p class="mb-4">
+                  <span class="font-medium">Challenge:</span> Integrating modern
+                  elevators with the existing building management system.
+                </p>
+                <p>
+                  <span class="font-medium">Solution:</span> Developed a custom
+                  interface module that allowed seamless communication between
+                  our elevator control systems and the building's existing
+                  infrastructure.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-3">Safety & Compliance</h3>
+              <div class="flex flex-wrap gap-3" id="modal-certifications">
+                <div
+                  class="flex items-center px-4 py-2 bg-gray-100 rounded-full"
+                >
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-600"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <span class="text-sm">ASME A17.1/CSA B44</span>
+                </div>
+                <div
+                  class="flex items-center px-4 py-2 bg-gray-100 rounded-full"
+                >
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-600"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <span class="text-sm">ADA Compliant</span>
+                </div>
+                <div
+                  class="flex items-center px-4 py-2 bg-gray-100 rounded-full"
+                >
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-600"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <span class="text-sm">UL Certified</span>
+                </div>
+                <div
+                  class="flex items-center px-4 py-2 bg-gray-100 rounded-full"
+                >
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-600"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <span class="text-sm">Energy Efficient</span>
+                </div>
+                <div
+                  class="flex items-center px-4 py-2 bg-gray-100 rounded-full"
+                >
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-600"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <span class="text-sm">Seismic Rated</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100 order-1 lg:order-2">
+            <div class="h-full flex items-center justify-center p-6 lg:p-8">
+              <div class="relative w-full">
+                <div class="aspect-w-16 aspect-h-9">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=modern%20glass%20panoramic%20elevator%20in%20a%20luxury%20shopping%20mall%20with%20high%20ceilings%2C%20clean%20architectural%20design%2C%20bright%20lighting%2C%20professional%20photography%20with%20neutral%20background&width=800&height=600&seq=12&orientation=landscape"
+                    alt="Project Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    id="modal-image"
+                  />
+                </div>
+                <div
+                  class="flex justify-center mt-4 gap-2"
+                  id="modal-thumbnails"
+                >
+                  <button
+                    class="w-16 h-16 rounded overflow-hidden border-2 border-primary"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=modern%20glass%20panoramic%20elevator%20in%20a%20luxury%20shopping%20mall%20with%20high%20ceilings%2C%20clean%20architectural%20design%2C%20bright%20lighting%2C%20professional%20photography%20with%20neutral%20background&width=800&height=600&seq=12&orientation=landscape"
+                      alt="Thumbnail 1"
+                      class="w-full h-full object-cover"
+                    />
+                  </button>
+                  <button
+                    class="w-16 h-16 rounded overflow-hidden border-2 border-transparent"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=close%20up%20of%20modern%20elevator%20control%20panel%20with%20touchscreen%20display%2C%20sleek%20design%2C%20professional%20lighting&width=800&height=600&seq=13&orientation=landscape"
+                      alt="Thumbnail 2"
+                      class="w-full h-full object-cover"
+                    />
+                  </button>
+                  <button
+                    class="w-16 h-16 rounded overflow-hidden border-2 border-transparent"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=panoramic%20view%20from%20inside%20glass%20elevator%20looking%20out%20at%20shopping%20mall%20interior%2C%20showing%20multiple%20floors%2C%20architectural%20details&width=800&height=600&seq=14&orientation=landscape"
+                      alt="Thumbnail 3"
+                      class="w-full h-full object-cover"
+                    />
+                  </button>
+                  <button
+                    class="w-16 h-16 rounded overflow-hidden border-2 border-transparent"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=elevator%20installation%20process%2C%20technicians%20working%20on%20elevator%20shaft%20in%20shopping%20mall%2C%20professional%20setting&width=800&height=600&seq=15&orientation=landscape"
+                      alt="Thumbnail 4"
+                      class="w-full h-full object-cover"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script id="headerScroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("bg-white", "shadow-md");
+            header.classList.remove("bg-transparent");
+
+            // Change text color when scrolled
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white", "hover:text-gray-300");
+              link.classList.add("text-gray-800", "hover:text-primary");
+            });
+
+            // Change logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.remove("text-white");
+            logo.classList.add("text-primary");
+
+            // Change menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.remove("text-white");
+              menuButton.classList.add("text-gray-800");
+            }
+          } else {
+            header.classList.remove("bg-white", "shadow-md");
+            header.classList.add("bg-transparent");
+
+            // Revert text color
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.add("text-white", "hover:text-gray-300");
+              link.classList.remove("text-gray-800", "hover:text-primary");
+            });
+
+            // Revert logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.add("text-white");
+            logo.classList.remove("text-primary");
+
+            // Revert menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.add("text-white");
+              menuButton.classList.remove("text-gray-800");
+            }
+          }
+        });
+      });
+    </script>
+    <script id="select-handler">
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectButtons = document.querySelectorAll(".custom-select button");
+        selectButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const select = this.closest(".custom-select");
+            select.classList.toggle("active");
+            // Close other open selects
+            document
+              .querySelectorAll(".custom-select.active")
+              .forEach((openSelect) => {
+                if (openSelect !== select) {
+                  openSelect.classList.remove("active");
+                }
+              });
+          });
+        });
+        // Handle option selection
+        document.querySelectorAll(".custom-select-options div").forEach((option) => {
+          option.addEventListener("click", function () {
+            const select = this.closest(".custom-select");
+            const button = select.querySelector("button span");
+            button.textContent = this.textContent;
+            select.classList.remove("active");
+          });
+        });
+        // Close selects when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!event.target.closest(".custom-select")) {
+            document.querySelectorAll(".custom-select.active").forEach((select) => {
+              select.classList.remove("active");
+            });
+          }
+        });
+      });
+    </script>
+    <script id="testimonial-slider">
+      document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("testimonial-slider");
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const dots = document.querySelectorAll("[data-slide]");
+        const prevBtn = document.getElementById("prev-testimonial");
+        const nextBtn = document.getElementById("next-testimonial");
+        let currentSlide = 0;
+        let slideWidth = 100;
+        function updateSlideWidth() {
+          if (window.innerWidth >= 1024) {
+            slideWidth = 33.333;
+          } else if (window.innerWidth >= 768) {
+            slideWidth = 50;
+          } else {
+            slideWidth = 100;
+          }
+          goToSlide(currentSlide);
+        }
+        function goToSlide(index) {
+          if (index < 0) {
+            index = slides.length - Math.floor(100 / slideWidth);
+          } else if (index > slides.length - Math.floor(100 / slideWidth)) {
+            index = 0;
+          }
+          currentSlide = index;
+          slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+          // Update dots
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("bg-primary", i === currentSlide);
+            dot.classList.toggle("bg-gray-300", i !== currentSlide);
+          });
+        }
+        // Initialize
+        updateSlideWidth();
+        window.addEventListener("resize", updateSlideWidth);
+        // Event listeners
+        prevBtn.addEventListener("click", () => goToSlide(currentSlide - 1));
+        nextBtn.addEventListener("click", () => goToSlide(currentSlide + 1));
+        dots.forEach((dot, i) => {
+          dot.addEventListener("click", () => goToSlide(i));
+        });
+        // Auto slide
+        let interval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+        const sliderContainer = document.querySelector(".relative");
+        sliderContainer.addEventListener("mouseenter", () => clearInterval(interval));
+        sliderContainer.addEventListener("mouseleave", () => {
+          clearInterval(interval);
+          interval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+        });
+      });
+    </script>
+    <script id="modal-handler">
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("project-modal");
+        const modalOverlay = document.getElementById("modal-overlay");
+        const closeModalBtn = document.getElementById("close-modal");
+        const projectButtons = document.querySelectorAll("[data-project]");
+        const thumbnails = document.querySelectorAll("#modal-thumbnails button");
+        const modalImage = document.getElementById("modal-image");
+        // Project data
+        const projects = {
+          1: {
+            title: "Westfield Shopping Center",
+            location: "San Francisco, California",
+            client: "Westfield Corporation",
+            date: "March 2023",
+            duration: "8 months",
+            value: "$4.2 million",
+            type: "Panoramic Glass",
+            capacity: "1,600 kg / 21 persons",
+            speed: "1.75 m/s",
+            height: "45 meters",
+            stops: "5 floors",
+            drive: "Machine Room-Less Gearless Traction",
+            tags: ["Panoramic", "Commercial"],
+          },
+          2: {
+            title: "Millennium Tower",
+            location: "Chicago, Illinois",
+            client: "Millennium Properties",
+            date: "November 2022",
+            duration: "14 months",
+            value: "$8.7 million",
+            type: "High-Speed Passenger",
+            capacity: "2,000 kg / 26 persons",
+            speed: "10 m/s",
+            height: "312 meters",
+            stops: "78 floors",
+            drive: "Gearless Traction with Destination Dispatch",
+            tags: ["High-Speed", "Commercial"],
+          },
+          3: {
+            title: "Boeing Manufacturing Plant",
+            location: "Seattle, Washington",
+            client: "Boeing Corporation",
+            date: "August 2023",
+            duration: "12 months",
+            value: "$5.8 million",
+            type: "Heavy-Duty Freight",
+            capacity: "10,000 kg",
+            speed: "0.5 m/s",
+            height: "24 meters",
+            stops: "3 floors",
+            drive: "Hydraulic with Reinforced Cabin",
+            tags: ["Freight", "Industrial"],
+          },
+          4: {
+            title: "The Residences at Park Avenue",
+            location: "New York City, New York",
+            client: "Park Avenue Development Group",
+            date: "January 2024",
+            duration: "10 months",
+            value: "$3.6 million",
+            type: "Luxury Residential",
+            capacity: "1,200 kg / 16 persons",
+            speed: "2.5 m/s",
+            height: "180 meters",
+            stops: "45 floors",
+            drive: "Machine Room-Less Gearless Traction",
+            tags: ["Passenger", "Residential"],
+          },
+          5: {
+            title: "Memorial Hospital",
+            location: "Boston, Massachusetts",
+            client: "Memorial Healthcare System",
+            date: "June 2023",
+            duration: "9 months",
+            value: "$4.5 million",
+            type: "Medical/Service",
+            capacity: "2,500 kg / 33 persons",
+            speed: "1.75 m/s",
+            height: "60 meters",
+            stops: "15 floors",
+            drive: "Gearless Traction with Emergency Backup",
+            tags: ["Medical", "Healthcare"],
+          },
+          6: {
+            title: "Malibu Beach House",
+            location: "Malibu, California",
+            client: "Private Residence",
+            date: "April 2024",
+            duration: "4 months",
+            value: "$850,000",
+            type: "Pneumatic Vacuum",
+            capacity: "450 kg / 5 persons",
+            speed: "0.3 m/s",
+            height: "9 meters",
+            stops: "3 floors",
+            drive: "Vacuum Pneumatic System",
+            tags: ["Home Lift", "Residential"],
+          },
+          7: {
+            title: "Grand Central Terminal",
+            location: "New York City, New York",
+            client: "Metropolitan Transportation Authority",
+            date: "October 2022",
+            duration: "18 months",
+            value: "$6.2 million",
+            type: "Historic Restoration",
+            capacity: "1,200 kg / 16 persons",
+            speed: "1.0 m/s",
+            height: "30 meters",
+            stops: "6 floors",
+            drive: "Modernized Geared Traction",
+            tags: ["Historic", "Commercial"],
+          },
+          8: {
+            title: "CN Tower",
+            location: "Toronto, Canada",
+            client: "Canada Lands Company",
+            date: "May 2023",
+            duration: "16 months",
+            value: "$7.8 million",
+            type: "External Observation",
+            capacity: "1,400 kg / 18 persons",
+            speed: "6.0 m/s",
+            height: "346 meters",
+            stops: "4 observation levels",
+            drive: "High-Speed Gearless Traction",
+            tags: ["Observation", "Tourism"],
+          },
+          9: {
+            title: "Ritz-Carlton Hotel",
+            location: "Dubai, UAE",
+            client: "Ritz-Carlton Hotel Group",
+            date: "December 2023",
+            duration: "11 months",
+            value: "$5.4 million",
+            type: "Luxury Hotel",
+            capacity: "1,800 kg / 24 persons",
+            speed: "4.0 m/s",
+            height: "210 meters",
+            stops: "52 floors",
+            drive: "Machine Room-Less Gearless Traction",
+            tags: ["Passenger", "Hospitality"],
+          },
+        };
+        function openModal(projectId) {
+          const project = projects[projectId];
+          // Update modal content
+          document.getElementById("modal-title").textContent = project.title;
+          document.getElementById("modal-location").textContent = project.location;
+          document.getElementById("modal-client").textContent = project.client;
+          document.getElementById("modal-date").textContent = project.date;
+          document.getElementById("modal-duration").textContent = project.duration;
+          document.getElementById("modal-value").textContent = project.value;
+          document.getElementById("modal-type").textContent = project.type;
+          document.getElementById("modal-capacity").textContent = project.capacity;
+          document.getElementById("modal-speed").textContent = project.speed;
+          document.getElementById("modal-height").textContent = project.height;
+          document.getElementById("modal-stops").textContent = project.stops;
+          document.getElementById("modal-drive").textContent = project.drive;
+          // Update tags
+          const tagsContainer = document.getElementById("modal-tags");
+          tagsContainer.innerHTML = "";
+          project.tags.forEach((tag) => {
+            const tagEl = document.createElement("span");
+            tagEl.className =
+              "px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium !rounded-full";
+            tagEl.textContent = tag;
+            tagsContainer.appendChild(tagEl);
+          });
+          // Show modal
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+        function closeModal() {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+        // Event listeners
+        projectButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const projectId = this.getAttribute("data-project");
+            openModal(projectId);
+          });
+        });
+        closeModalBtn.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", closeModal);
+        // Thumbnail gallery
+        thumbnails.forEach((thumb, index) => {
+          thumb.addEventListener("click", function () {
+            // Update main image
+            modalImage.src = this.querySelector("img").src;
+            // Update active thumbnail
+            thumbnails.forEach((t) => t.classList.remove("border-primary"));
+            this.classList.add("border-primary");
+          });
+        });
+        // Close on escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

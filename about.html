@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About ElevaTech - Our Story, Team & Values</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#2B4C7E", secondary: "#1B365D" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+          font-family: 'Roboto', sans-serif;
+      }
+      .hero-section {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://readdy.ai/api/search-image?query=modern%2520corporate%2520headquarters%2520building%2520with%2520glass%2520facade%2520and%2520elevators%2520visible%2520from%2520exterior%2C%2520professional%2520architectural%2520photography%2C%2520blue%2520sky%2520background%2C%2520showing%2520sleek%2520design%2520with%2520blue%2520glass%2520and%2520steel%2520structure%2C%2520daytime%2C%2520high%2520resolution%2C%2520no%2520people%2C%2520corporate%2520identity%2520visible&width=1920&height=1080&seq=10&orientation=landscape');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+      }
+      .timeline-container {
+          position: relative;
+      }
+      .timeline-container::after {
+          content: '';
+          position: absolute;
+          width: 4px;
+          background-color: #e5e7eb;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          margin-left: -2px;
+      }
+      .timeline-item {
+          position: relative;
+          width: 50%;
+          padding: 20px 40px;
+      }
+      .timeline-item::after {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: #2B4C7E;
+          border-radius: 50%;
+          top: 28px;
+          z-index: 1;
+      }
+      .timeline-left {
+          left: 0;
+      }
+      .timeline-right {
+          left: 50%;
+      }
+      .timeline-left::after {
+          right: -10px;
+      }
+      .timeline-right::after {
+          left: -10px;
+      }
+      .team-card:hover {
+          transform: translateY(-10px);
+      }
+      .team-card {
+          transition: all 0.3s ease;
+      }
+      .value-card {
+          transition: all 0.3s ease;
+      }
+      .value-card:hover {
+          transform: translateY(-5px);
+      }
+      .award-card {
+          transition: all 0.3s ease;
+      }
+      .award-card:hover {
+          transform: scale(1.03);
+      }
+      input:focus, textarea:focus {
+          outline: none;
+          border-color: #2B4C7E;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+     <!-- Header Navigation -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="#" class="flex items-center space-x-2">
+            <img src="Images/logo1.jpeg" alt="ElevaTech Logo" class="h-16 w-auto" />
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gray-300 font-medium"
+            >Home</a
+          >
+          <a href="about.html" class="text-white hover:text-gray-300 font-medium"
+            >About</a
+          >
+          <a href="Services.html" class="text-white hover:text-gray-300 font-medium"
+            >Services</a
+          >
+          <a href="Project.html" class="text-white hover:text-gray-300 font-medium"
+            >Projects</a
+          >
+          <a href="contact.html" class="text-white hover:text-gray-300 font-medium"
+            >Contact</a
+          >
+        </nav>
+        <div>
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+          >
+            Request Quote
+          </button>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="text-white w-10 h-10 flex items-center justify-center"
+          >
+            <i class="ri-menu-line ri-2x"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-4">
+          <nav class="flex flex-col space-y-4">
+            <a
+              href="index.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >About</a
+            >
+            <a
+              href="Services.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Services</a
+            >
+            <a
+              href="Project.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Projects</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-[60vh] flex items-center">
+      <div class="container mx-auto px-4 w-full">
+        <div class="max-w-3xl">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            About ElevaTech
+          </h1>
+          <p class="text-xl text-white mb-8 opacity-90">
+            Discover our journey of innovation, meet our team, and learn about
+            the values that drive our success in the vertical transportation
+            industry.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >
+              Our Mission
+            </button>
+            <button
+              class="bg-white text-primary px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >
+              Meet Our Team
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Story Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+            <p class="text-gray-600 mb-6">
+              Founded in 2000 by a team of visionary engineers with decades of
+              combined experience in the elevator industry, ElevaTech began with
+              a simple mission: to revolutionize vertical transportation through
+              innovation, quality, and exceptional service.
+            </p>
+            <p class="text-gray-600 mb-6">
+              What started as a small operation with just 15 employees has grown
+              into a global enterprise with over 500 team members across 12
+              countries. Throughout our journey, we've remained committed to our
+              founding principles while continuously evolving to meet the
+              changing needs of our clients and the industry.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Today, ElevaTech is recognized as an industry leader, having
+              completed more than 1,500 projects worldwide, from luxury hotels
+              and commercial skyscrapers to healthcare facilities and industrial
+              complexes. Our success is built on our unwavering commitment to
+              safety, reliability, and cutting-edge technology.
+            </p>
+            <div class="flex items-center gap-4 mt-8">
+              <div class="w-16 h-16 rounded-full overflow-hidden">
+                <img
+                  src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520middle-aged%2520male%2520executive%2520in%2520a%2520business%2520suit%2520with%2520blue%2520tie%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=200&height=200&seq=11&orientation=squarish"
+                  alt="Founder"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div>
+                <p class="text-gray-800 font-bold">Richard Anderson</p>
+                <p class="text-gray-600 text-sm">Founder & CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="https://readdy.ai/api/search-image?query=professional%2520team%2520of%2520diverse%2520elevator%2520engineers%2520and%2520executives%2520in%2520a%2520modern%2520office%2520setting%2C%2520discussing%2520blueprints%2520and%2520plans%2C%2520showing%2520collaboration%2520and%2520expertise%2C%2520corporate%2520environment%2520with%2520blue%2520accents%2C%2520high%2520resolution%2520photography&width=800&height=600&seq=12&orientation=landscape"
+              alt="ElevaTech History"
+              class="rounded-lg shadow-lg w-full h-auto object-cover object-top"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Mission & Vision
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Guided by our core principles, we strive to set new standards in the
+            elevator industry.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="bg-white p-10 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-flag-line ri-2x"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+            <p class="text-gray-600 mb-6">
+              To deliver innovative, safe, and reliable vertical transportation
+              solutions that exceed client expectations through engineering
+              excellence, superior craftsmanship, and exceptional service.
+            </p>
+            <p class="text-gray-600">
+              We are committed to enhancing the built environment by creating
+              elevator systems that seamlessly integrate with architectural
+              designs while prioritizing safety, efficiency, and user
+              experience.
+            </p>
+          </div>
+          <div class="bg-white p-10 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-eye-line ri-2x"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+            <p class="text-gray-600 mb-6">
+              To be the global leader in vertical transportation solutions,
+              recognized for our innovation, quality, and commitment to
+              sustainability, while setting new standards for safety and
+              performance in the industry.
+            </p>
+            <p class="text-gray-600">
+              We envision a future where ElevaTech elevators are the preferred
+              choice worldwide, known for their reliability, energy efficiency,
+              and contribution to smart building technologies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Meet Our Leadership Team
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Our diverse team of experts brings decades of combined experience
+            and a passion for innovation to every project.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="team-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="relative mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520middle-aged%2520male%2520executive%2520in%2520a%2520business%2520suit%2520with%2520blue%2520tie%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=400&height=400&seq=13&orientation=squarish"
+                alt="Richard Anderson"
+                class="w-full h-64 object-cover object-top rounded-lg"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-1">
+              Richard Anderson
+            </h3>
+            <p class="text-primary font-medium mb-4">Founder & CEO</p>
+            <p class="text-gray-600 mb-6">
+              With over 30 years of experience in the elevator industry, Richard
+              founded ElevaTech with a vision to revolutionize vertical
+              transportation through innovation and quality.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="team-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="relative mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520an%2520asian%2520female%2520executive%2520in%2520business%2520attire%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=400&height=400&seq=14&orientation=squarish"
+                alt="Jennifer Chen"
+                class="w-full h-64 object-cover object-top rounded-lg"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-1">Jennifer Chen</h3>
+            <p class="text-primary font-medium mb-4">
+              Chief Technology Officer
+            </p>
+            <p class="text-gray-600 mb-6">
+              Jennifer leads our R&D department, driving innovation in smart
+              elevator technologies. Her background in mechanical engineering
+              and IoT has revolutionized our product offerings.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="team-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="relative mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520an%2520african%2520american%2520male%2520executive%2520in%2520business%2520attire%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=400&height=400&seq=15&orientation=squarish"
+                alt="Marcus Johnson"
+                class="w-full h-64 object-cover object-top rounded-lg"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-1">Marcus Johnson</h3>
+            <p class="text-primary font-medium mb-4">
+              Chief Operations Officer
+            </p>
+            <p class="text-gray-600 mb-6">
+              Marcus oversees our global operations, ensuring efficiency and
+              excellence in every project. His strategic approach has been
+              instrumental in our international expansion.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="team-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="relative mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520female%2520executive%2520with%2520blonde%2520hair%2520in%2520business%2520attire%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=400&height=400&seq=16&orientation=squarish"
+                alt="Sophia Miller"
+                class="w-full h-64 object-cover object-top rounded-lg"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-1">Sophia Miller</h3>
+            <p class="text-primary font-medium mb-4">Chief Financial Officer</p>
+            <p class="text-gray-600 mb-6">
+              Sophia manages our financial strategy and growth initiatives. Her
+              background in corporate finance has helped secure our position as
+              an industry leader.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="team-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="relative mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520middle-eastern%2520male%2520executive%2520in%2520business%2520attire%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=400&height=400&seq=17&orientation=squarish"
+                alt="Amir Patel"
+                class="w-full h-64 object-cover object-top rounded-lg"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-1">Amir Patel</h3>
+            <p class="text-primary font-medium mb-4">Global Sales Director</p>
+            <p class="text-gray-600 mb-6">
+              Amir leads our international sales team, developing strategic
+              partnerships worldwide. His client-focused approach has secured
+              major projects across continents.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="team-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="relative mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520latina%2520female%2520executive%2520in%2520business%2520attire%2C%2520confident%2520expression%2C%2520neutral%2520background%2C%2520high-quality%2520corporate%2520portrait%2C%2520professional%2520lighting&width=400&height=400&seq=18&orientation=squarish"
+                alt="Elena Rodriguez"
+                class="w-full h-64 object-cover object-top rounded-lg"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-1">
+              Elena Rodriguez
+            </h3>
+            <p class="text-primary font-medium mb-4">Head of Engineering</p>
+            <p class="text-gray-600 mb-6">
+              Elena oversees our engineering department, ensuring all designs
+              meet the highest standards. Her expertise in structural
+              engineering is unparalleled in the industry.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Core Values</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            These principles guide every decision we make and every elevator we
+            build.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="value-card bg-white p-8 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-shield-check-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Safety First</h3>
+            <p class="text-gray-600">
+              We prioritize safety in every aspect of our operations, from
+              design and manufacturing to installation and maintenance. Our
+              commitment to safety is non-negotiable and drives all our
+              decisions.
+            </p>
+          </div>
+          <div class="value-card bg-white p-8 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-award-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Excellence</h3>
+            <p class="text-gray-600">
+              We strive for excellence in everything we do, from the quality of
+              our products to the service we provide. We continuously raise the
+              bar for ourselves and the industry as a whole.
+            </p>
+          </div>
+          <div class="value-card bg-white p-8 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-lightbulb-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+            <p class="text-gray-600">
+              We embrace innovation and continuously invest in research and
+              development to create cutting-edge elevator solutions that address
+              the evolving needs of our clients and the built environment.
+            </p>
+          </div>
+          <div class="value-card bg-white p-8 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-team-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Collaboration</h3>
+            <p class="text-gray-600">
+              We believe in the power of teamwork and collaboration, both within
+              our organization and with our clients and partners. Together, we
+              achieve more and deliver better results.
+            </p>
+          </div>
+          <div class="value-card bg-white p-8 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-customer-service-2-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Client Focus</h3>
+            <p class="text-gray-600">
+              We put our clients at the center of everything we do, listening to
+              their needs and working tirelessly to exceed their expectations.
+              Their success is our success.
+            </p>
+          </div>
+          <div class="value-card bg-white p-8 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-recycle-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Sustainability</h3>
+            <p class="text-gray-600">
+              We are committed to environmental responsibility and
+              sustainability, developing energy-efficient elevator systems and
+              implementing eco-friendly practices throughout our operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Milestones Timeline Section -->
+    <section class="py-20 bg-white overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Journey Through the Years
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Key milestones that have shaped our company's growth and success.
+          </p>
+        </div>
+        <div class="timeline-container py-10 hidden md:block">
+          <div class="timeline-item timeline-left">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2000</h3>
+              <p class="text-gray-600">
+                ElevaTech founded by Richard Anderson with a team of 15
+                engineers in New York City.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-right">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2005</h3>
+              <p class="text-gray-600">
+                Completed our first major project - a 40-story commercial tower
+                with 12 high-speed elevators.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-left">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2008</h3>
+              <p class="text-gray-600">
+                Expanded operations to Europe with the opening of our London
+                office.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-right">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2012</h3>
+              <p class="text-gray-600">
+                Launched our revolutionary energy-efficient elevator system,
+                reducing power consumption by 40%.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-left">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2015</h3>
+              <p class="text-gray-600">
+                Celebrated the installation of our 1000th elevator and expanded
+                to Asia with offices in Singapore and Shanghai.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-right">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2018</h3>
+              <p class="text-gray-600">
+                Introduced our smart elevator technology with IoT integration
+                and predictive maintenance capabilities.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-left">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2020</h3>
+              <p class="text-gray-600">
+                Celebrated 20 years in business and launched our touchless
+                elevator control system in response to global health concerns.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-right">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2023</h3>
+              <p class="text-gray-600">
+                Completed our most ambitious project to date - the elevator
+                system for the 120-story Global Finance Tower.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-left">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">2025</h3>
+              <p class="text-gray-600">
+                Celebrating 25 years of excellence with the launch of our
+                next-generation sustainable elevator platform.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Timeline -->
+        <div class="md:hidden space-y-4">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2000</h3>
+            <p class="text-gray-600">
+              ElevaTech founded by Richard Anderson with a team of 15 engineers
+              in New York City.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2005</h3>
+            <p class="text-gray-600">
+              Completed our first major project - a 40-story commercial tower
+              with 12 high-speed elevators.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2008</h3>
+            <p class="text-gray-600">
+              Expanded operations to Europe with the opening of our London
+              office.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2012</h3>
+            <p class="text-gray-600">
+              Launched our revolutionary energy-efficient elevator system,
+              reducing power consumption by 40%.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2015</h3>
+            <p class="text-gray-600">
+              Celebrated the installation of our 1000th elevator and expanded to
+              Asia with offices in Singapore and Shanghai.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2018</h3>
+            <p class="text-gray-600">
+              Introduced our smart elevator technology with IoT integration and
+              predictive maintenance capabilities.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2020</h3>
+            <p class="text-gray-600">
+              Celebrated 20 years in business and launched our touchless
+              elevator control system in response to global health concerns.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2023</h3>
+            <p class="text-gray-600">
+              Completed our most ambitious project to date - the elevator system
+              for the 120-story Global Finance Tower.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">2025</h3>
+            <p class="text-gray-600">
+              Celebrating 25 years of excellence with the launch of our
+              next-generation sustainable elevator platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Presence Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Global Presence
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            With offices and projects across the globe, we deliver excellence in
+            vertical transportation worldwide.
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2">
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden h-[400px]"
+              style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"
+            ></div>
+          </div>
+          <div class="md:w-1/2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-3"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-800">North America</h3>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li>New York (Headquarters)</li>
+                  <li>Chicago</li>
+                  <li>Los Angeles</li>
+                  <li>Toronto</li>
+                </ul>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-3"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-800">Europe</h3>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li>London</li>
+                  <li>Paris</li>
+                  <li>Berlin</li>
+                  <li>Madrid</li>
+                </ul>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-3"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-800">Asia Pacific</h3>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li>Singapore</li>
+                  <li>Shanghai</li>
+                  <li>Tokyo</li>
+                  <li>Sydney</li>
+                </ul>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-3"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-800">Middle East</h3>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li>Dubai</li>
+                  <li>Abu Dhabi</li>
+                  <li>Doha</li>
+                  <li>Riyadh</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-lg font-bold text-gray-800 mb-4">
+                Projects Completed by Region
+              </h3>
+              <div id="projects-chart" class="h-[200px]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Recognition Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Awards & Recognition
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Our commitment to excellence has been recognized by industry leaders
+            and organizations worldwide.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="award-card bg-white p-8 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4"
+              >
+                <i class="ri-award-fill ri-2x"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">
+                  Excellence in Innovation
+                </h3>
+                <p class="text-gray-600">
+                  International Elevator Association, 2023
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              Recognized for our revolutionary smart elevator system with
+              predictive maintenance technology.
+            </p>
+          </div>
+          <div
+            class="award-card bg-white p-8 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4"
+              >
+                <i class="ri-award-fill ri-2x"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">
+                  Safety First Award
+                </h3>
+                <p class="text-gray-600">National Safety Council, 2022</p>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              Awarded for our exceptional safety record and innovative safety
+              features in elevator systems.
+            </p>
+          </div>
+          <div
+            class="award-card bg-white p-8 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4"
+              >
+                <i class="ri-award-fill ri-2x"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">
+                  Green Building Partner
+                </h3>
+                <p class="text-gray-600">Sustainable Building Council, 2021</p>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              Recognized for our energy-efficient elevator systems and
+              commitment to environmental sustainability.
+            </p>
+          </div>
+          <div
+            class="award-card bg-white p-8 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4"
+              >
+                <i class="ri-award-fill ri-2x"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">
+                  Project of the Year
+                </h3>
+                <p class="text-gray-600">
+                  Architectural Excellence Awards, 2020
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              Awarded for our innovative elevator design in the Grand Meridian
+              Hotel, featuring panoramic glass elevators.
+            </p>
+          </div>
+          <div
+            class="award-card bg-white p-8 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4"
+              >
+                <i class="ri-award-fill ri-2x"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">Best Employer</h3>
+                <p class="text-gray-600">Engineering Workplace Awards, 2019</p>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              Recognized for our exceptional workplace culture, employee
+              benefits, and professional development programs.
+            </p>
+          </div>
+          <div
+            class="award-card bg-white p-8 rounded-lg shadow-md border border-gray-100"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4"
+              >
+                <i class="ri-award-fill ri-2x"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">
+                  Customer Service Excellence
+                </h3>
+                <p class="text-gray-600">Industry Service Awards, 2018</p>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              Awarded for our exceptional customer service and maintenance
+              program, ensuring minimal downtime for clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Our Team Section -->
+    <section class="py-20 bg-primary">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-white mb-4">Join Our Team</h2>
+            <p class="text-white/90 mb-6">
+              At ElevaTech, we're always looking for talented individuals who
+              share our passion for innovation and excellence. Join our diverse
+              team and help us shape the future of vertical transportation.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-white text-primary px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+              >
+                View Open Positions
+              </button>
+              <button
+                class="bg-transparent text-white border border-white px-8 py-3 rounded-button font-medium hover:bg-white/10 transition-all whitespace-nowrap"
+              >
+                Our Culture
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="https://readdy.ai/api/search-image?query=diverse%2520team%2520of%2520professionals%2520collaborating%2520in%2520a%2520modern%2520office%2520environment%2C%2520showing%2520engineers%2520and%2520designers%2520working%2520together%2C%2520professional%2520corporate%2520photography%2C%2520bright%2520workspace%2520with%2520blue%2520accents%2C%2520high%2520resolution&width=600&height=400&seq=19&orientation=landscape"
+              alt="Join Our Team"
+              class="rounded-lg shadow-lg w-full h-auto object-cover object-top"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a
+              href="index.html"
+              data-readdy="true"
+              class="text-3xl font-['Pacifico'] text-white mb-6 inline-block"
+              >ElevaTech</a
+            >
+            <p class="text-white/80 mb-6">
+              Innovative elevator solutions engineered for reliability, safety,
+              and performance since 2000.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  data-readdy="true"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white hover:text-white transition-all"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Services.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Project.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Design & Manufacturing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Installation & Erection</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Maintenance & Repair</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Modernization</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Emergency Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Compliance & Inspection</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-white/80 mr-3 mt-1"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-white/80"
+                  >123 Elevator Avenue, Suite 500<br />New York, NY 10001</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-white/80 mr-3"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-white/80">+1 (800) 555-0123</span>
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-white/80 mr-3"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-white/80">info@elevatech.com</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h4 class="text-white font-medium mb-3">
+                Subscribe to Our Newsletter
+              </h4>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="px-4 py-2 rounded-l-button bg-white/10 border-none text-white placeholder-white/60 flex-grow"
+                />
+                <button
+                  class="bg-primary px-4 py-2 rounded-r-button whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-white/20 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-white/70 text-sm mb-4 md:mb-0">
+              © 2025 ElevaTech. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-4">
+              <a
+                href="#"
+                class="text-white/70 text-sm hover:text-white transition-all"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-white/70 text-sm hover:text-white transition-all"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-white/70 text-sm hover:text-white transition-all"
+                >Sitemap</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="headerScroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("bg-white", "shadow-md");
+            header.classList.remove("bg-transparent");
+
+            // Change text color when scrolled
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white", "hover:text-gray-300");
+              link.classList.add("text-gray-800", "hover:text-primary");
+
+              // Keep the active link styled
+              if (link.classList.contains("border-b-2")) {
+                link.classList.remove("border-white");
+                link.classList.add("border-primary");
+              }
+            });
+
+            // Change logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.remove("text-white");
+            logo.classList.add("text-primary");
+
+            // Change menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.remove("text-white");
+              menuButton.classList.add("text-gray-800");
+            }
+          } else {
+            header.classList.remove("bg-white", "shadow-md");
+            header.classList.add("bg-transparent");
+
+            // Revert text color
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.add("text-white", "hover:text-gray-300");
+              link.classList.remove("text-gray-800", "hover:text-primary");
+
+              // Revert the active link styling
+              if (link.classList.contains("border-b-2")) {
+                link.classList.add("border-white");
+                link.classList.remove("border-primary");
+              }
+            });
+
+            // Revert logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.add("text-white");
+            logo.classList.remove("text-primary");
+
+            // Revert menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.add("text-white");
+              menuButton.classList.remove("text-gray-800");
+            }
+          }
+        });
+
+        // Trigger scroll event on page load to set initial state
+        window.dispatchEvent(new Event("scroll"));
+      });
+    </script>
+
+    <script id="mobileMenu">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          if (mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.remove("hidden");
+            mobileMenuButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+          } else {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+          }
+        });
+      });
+    </script>
+
+    <script id="projectsChart">
+      document.addEventListener("DOMContentLoaded", function () {
+        const chartDom = document.getElementById("projects-chart");
+        if (chartDom) {
+          const myChart = echarts.init(chartDom);
+          const option = {
+            animation: false,
+            tooltip: {
+              trigger: "item",
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              borderColor: "#ddd",
+              borderWidth: 1,
+              textStyle: {
+                color: "#1f2937",
+              },
+            },
+            legend: {
+              orient: "horizontal",
+              bottom: 0,
+              textStyle: {
+                color: "#1f2937",
+              },
+            },
+            series: [
+              {
+                name: "Projects by Region",
+                type: "pie",
+                radius: ["40%", "70%"],
+                avoidLabelOverlap: false,
+                itemStyle: {
+                  borderRadius: 8,
+                  borderColor: "#fff",
+                  borderWidth: 2,
+                },
+                label: {
+                  show: false,
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: 14,
+                    fontWeight: "bold",
+                  },
+                },
+                labelLine: {
+                  show: false,
+                },
+                data: [
+                  {
+                    value: 580,
+                    name: "North America",
+                    itemStyle: { color: "rgba(87, 181, 231, 1)" },
+                  },
+                  {
+                    value: 420,
+                    name: "Europe",
+                    itemStyle: { color: "rgba(141, 211, 199, 1)" },
+                  },
+                  {
+                    value: 320,
+                    name: "Asia Pacific",
+                    itemStyle: { color: "rgba(251, 191, 114, 1)" },
+                  },
+                  {
+                    value: 180,
+                    name: "Middle East",
+                    itemStyle: { color: "rgba(252, 141, 98, 1)" },
+                  },
+                ],
+              },
+            ],
+          };
+          myChart.setOption(option);
+
+          window.addEventListener("resize", function () {
+            myChart.resize();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

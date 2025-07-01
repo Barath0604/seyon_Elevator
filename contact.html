@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Elevate Engineering</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0F52BA", secondary: "#5D8AA8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+      .custom-checkbox input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 2px solid #e5e7eb;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: #0F52BA;
+        border-color: #0F52BA;
+      }
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 6px;
+        top: 2px;
+        width: 6px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+      .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+      }
+      .custom-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #e5e7eb;
+        transition: .4s;
+        border-radius: 24px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+      }
+      .custom-switch input:checked + .slider {
+        background-color: #0F52BA;
+      }
+      .custom-switch input:checked + .slider:before {
+        transform: translateX(20px);
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 500px;
+      }
+      .accordion-item.active .accordion-icon {
+        transform: rotate(180deg);
+      }
+      .map-container {
+        background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+>
+        <div class="flex items-center">
+          <a href="#" class="flex items-center space-x-2">
+            <img src="Images/logo1.jpeg" alt="ElevaTech Logo" class="h-16 w-auto" />
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gray-300 font-medium"
+            >Home</a
+          >
+          <a href="about.html" class="text-white hover:text-gray-300 font-medium"
+            >About</a
+          >
+          <a href="Services.html" class="text-white hover:text-gray-300 font-medium"
+            >Services</a
+          >
+          <a href="Project.html" class="text-white hover:text-gray-300 font-medium"
+            >Projects</a
+          >
+          <a href="contact.html" class="text-white hover:text-gray-300 font-medium"
+            >Contact</a
+          >
+        </nav>
+        <div>
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+          >
+            Request Quote
+          </button>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="text-white w-10 h-10 flex items-center justify-center"
+          >
+            <i class="ri-menu-line ri-2x"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-4">
+          <nav class="flex flex-col space-y-4">
+            <a
+              href="index.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >About</a
+            >
+            <a
+              href="Services.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Services</a
+            >
+            <a
+              href="Project.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Projects</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20office%20reception%20area%20with%20clean%20lines%20and%20blue%20accent%20wall%2C%20featuring%20a%20reception%20desk%20with%20friendly%20staff%2C%20comfortable%20seating%20area%2C%20and%20subtle%20elevator%20company%20branding%2C%20the%20left%20side%20has%20a%20gradient%20blue%20overlay%20fading%20to%20transparent%20on%20the%20right%2C%20high-quality%20corporate%20photography%20style&width=1920&height=600&seq=1&orientation=landscape');"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Get in Touch
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            We're here to answer your questions and provide the support you need
+            for your vertical transportation projects.
+          </p>
+          <div class="flex space-x-4">
+            <button
+              class="bg-white text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-gray-100 transition"
+            >
+              Contact Now
+            </button>
+            <button
+              class="bg-transparent border border-white text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-white/10 transition"
+            >
+              Emergency Service
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Contact Banner -->
+    <section class="bg-red-600 py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center text-white mb-2 md:mb-0">
+            <div class="w-10 h-10 flex items-center justify-center mr-3">
+              <i class="ri-alarm-warning-line ri-lg"></i>
+            </div>
+            <div>
+              <p class="font-medium">24/7 Emergency Elevator Service</p>
+              <p class="text-sm text-white/80">
+                Immediate response for urgent situations
+              </p>
+            </div>
+          </div>
+          <a
+            href="tel:+18005550911"
+            class="flex items-center bg-white text-red-600 px-6 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-gray-100 transition"
+          >
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-phone-fill"></i>
+            </div>
+            <span>+1 (800) 555-0911</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
+            <p class="text-gray-600 mb-8">
+              Fill out the form below, and our team will get back to you within
+              24 hours.
+            </p>
+
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="full-name"
+                    class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                    required
+                  />
+                  <label
+                    for="full-name"
+                    class="absolute left-4 top-3 text-gray-500 transition-all duration-200 pointer-events-none"
+                    >Full Name *</label
+                  >
+                </div>
+                <div class="relative">
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                    required
+                  />
+                  <label
+                    for="email"
+                    class="absolute left-4 top-3 text-gray-500 transition-all duration-200 pointer-events-none"
+                    >Email Address *</label
+                  >
+                </div>
+                <div class="relative">
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                  />
+                  <label
+                    for="phone"
+                    class="absolute left-4 top-3 text-gray-500 transition-all duration-200 pointer-events-none"
+                    >Phone Number</label
+                  >
+                </div>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="company"
+                    class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                  />
+                  <label
+                    for="company"
+                    class="absolute left-4 top-3 text-gray-500 transition-all duration-200 pointer-events-none"
+                    >Company Name</label
+                  >
+                </div>
+              </div>
+
+              <div class="relative">
+                <div class="relative">
+                  <select
+                    id="project-type"
+                    class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition appearance-none pr-10 text-gray-500"
+                  >
+                    <option value="" disabled selected hidden></option>
+                    <option value="installation">New Installation</option>
+                    <option value="modernization">Modernization</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="repair">Repair</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <label
+                    for="project-type"
+                    class="absolute left-4 top-3 text-gray-500 transition-all duration-200 pointer-events-none"
+                    >Project Type</label
+                  >
+                  <div class="absolute right-4 top-3 pointer-events-none">
+                    <i class="ri-arrow-down-s-line ri-lg text-gray-400"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative">
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                ></textarea>
+                <label
+                  for="message"
+                  class="absolute left-4 top-3 text-gray-500 transition-all duration-200 pointer-events-none"
+                  >Message</label
+                >
+              </div>
+
+              <div class="flex items-start">
+                <label class="custom-checkbox mt-0.5">
+                  <input type="checkbox" required />
+                  <span class="checkmark"></span>
+                </label>
+                <span class="ml-3 text-gray-600 text-sm"
+                  >I agree to the
+                  <a href="#" class="text-primary hover:underline"
+                    >Privacy Policy</a
+                  >
+                  and consent to being contacted regarding my inquiry.</span
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="bg-primary text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap shadow hover:bg-primary/90 transition w-full md:w-auto"
+              >
+                Submit Message
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Contact Information</h2>
+            <p class="text-gray-600 mb-8">
+              Have questions or need assistance? Reach out to us through any of
+              these channels.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <!-- Main Office Card -->
+              <div
+                class="bg-white p-6 !rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <div
+                  class="w-12 h-12 bg-primary/10 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-building-line ri-lg text-primary"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Main Office</h3>
+                <address class="not-italic text-gray-600 mb-4">
+                  123 Elevator Avenue, Suite 500<br />
+                  Chicago, IL 60601, USA
+                </address>
+                <div class="flex items-center text-gray-600 mb-2">
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-phone-line"></i>
+                  </div>
+                  <a href="tel:+13125557890" class="hover:text-primary"
+                    >+1 (312) 555-7890</a
+                  >
+                </div>
+                <div class="flex items-center text-gray-600">
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-mail-line"></i>
+                  </div>
+                  <a
+                    href="mailto:info@elevateengineering.com"
+                    class="hover:text-primary"
+                    >info@elevateengineering.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Office Hours Card -->
+              <div
+                class="bg-white p-6 !rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <div
+                  class="w-12 h-12 bg-primary/10 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-time-line ri-lg text-primary"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Office Hours</h3>
+                <ul class="text-gray-600 space-y-2">
+                  <li class="flex justify-between">
+                    <span>Monday - Friday:</span>
+                    <span>8:00 AM - 6:00 PM</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Saturday:</span>
+                    <span>9:00 AM - 2:00 PM</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Sunday:</span>
+                    <span>Closed</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Holidays:</span>
+                    <span>Limited Hours</span>
+                  </li>
+                </ul>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                  <div class="flex items-center text-gray-600">
+                    <div
+                      class="w-5 h-5 flex items-center justify-center mr-2 text-green-600"
+                    >
+                      <i class="ri-customer-service-2-line"></i>
+                    </div>
+                    <span>Technical support available 24/7</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Emergency Service Card -->
+              <div
+                class="bg-white p-6 !rounded-lg shadow-sm hover:shadow-md transition md:col-span-2"
+              >
+                <div
+                  class="w-12 h-12 bg-red-100 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-alarm-warning-line ri-lg text-red-600"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Emergency Service</h3>
+                <p class="text-gray-600 mb-4">
+                  Our emergency response team is available 24 hours a day, 7
+                  days a week for urgent elevator issues.
+                </p>
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                  <a
+                    href="tel:+18005550911"
+                    class="flex items-center justify-center bg-red-600 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-700 transition"
+                  >
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-phone-fill"></i>
+                    </div>
+                    <span>+1 (800) 555-0911</span>
+                  </a>
+                  <span class="text-gray-500"
+                    >Average response time: 30 minutes</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Department Directory -->
+            <div class="bg-white !rounded-lg shadow-sm overflow-hidden mb-10">
+              <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                <h3 class="text-lg font-semibold">Department Directory</h3>
+              </div>
+              <div class="p-4">
+                <div class="flex border-b">
+                  <button
+                    class="tab-button px-4 py-3 font-medium text-primary border-b-2 border-primary"
+                    data-tab="sales"
+                  >
+                    Sales & Consulting
+                  </button>
+                  <button
+                    class="tab-button px-4 py-3 font-medium text-gray-500 border-b-2 border-transparent"
+                    data-tab="support"
+                  >
+                    Technical Support
+                  </button>
+                  <button
+                    class="tab-button px-4 py-3 font-medium text-gray-500 border-b-2 border-transparent"
+                    data-tab="careers"
+                  >
+                    Careers
+                  </button>
+                </div>
+
+                <div id="sales-tab" class="tab-content active p-4">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 bg-gray-200 !rounded-full flex items-center justify-center mr-3"
+                    >
+                      <i class="ri-user-3-line text-gray-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Elizabeth Parker</h4>
+                      <p class="text-gray-600 text-sm">Director of Sales</p>
+                      <div class="flex items-center mt-1">
+                        <a
+                          href="mailto:elizabeth.parker@elevateengineering.com"
+                          class="text-primary text-sm hover:underline mr-4"
+                          >elizabeth.parker@elevateengineering.com</a
+                        >
+                        <a
+                          href="tel:+13125557891"
+                          class="text-primary text-sm hover:underline"
+                          >+1 (312) 555-7891</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 bg-gray-200 !rounded-full flex items-center justify-center mr-3"
+                    >
+                      <i class="ri-user-3-line text-gray-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">James Wilson</h4>
+                      <p class="text-gray-600 text-sm">
+                        Commercial Sales Manager
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <a
+                          href="mailto:james.wilson@elevateengineering.com"
+                          class="text-primary text-sm hover:underline mr-4"
+                          >james.wilson@elevateengineering.com</a
+                        >
+                        <a
+                          href="tel:+13125557892"
+                          class="text-primary text-sm hover:underline"
+                          >+1 (312) 555-7892</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="support-tab" class="tab-content p-4">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 bg-gray-200 !rounded-full flex items-center justify-center mr-3"
+                    >
+                      <i class="ri-user-3-line text-gray-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Robert Chen</h4>
+                      <p class="text-gray-600 text-sm">
+                        Technical Support Manager
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <a
+                          href="mailto:robert.chen@elevateengineering.com"
+                          class="text-primary text-sm hover:underline mr-4"
+                          >robert.chen@elevateengineering.com</a
+                        >
+                        <a
+                          href="tel:+13125557893"
+                          class="text-primary text-sm hover:underline"
+                          >+1 (312) 555-7893</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 bg-gray-200 !rounded-full flex items-center justify-center mr-3"
+                    >
+                      <i class="ri-user-3-line text-gray-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Sarah Johnson</h4>
+                      <p class="text-gray-600 text-sm">Customer Service Lead</p>
+                      <div class="flex items-center mt-1">
+                        <a
+                          href="mailto:sarah.johnson@elevateengineering.com"
+                          class="text-primary text-sm hover:underline mr-4"
+                          >sarah.johnson@elevateengineering.com</a
+                        >
+                        <a
+                          href="tel:+13125557894"
+                          class="text-primary text-sm hover:underline"
+                          >+1 (312) 555-7894</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="careers-tab" class="tab-content p-4">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 bg-gray-200 !rounded-full flex items-center justify-center mr-3"
+                    >
+                      <i class="ri-user-3-line text-gray-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Michael Thompson</h4>
+                      <p class="text-gray-600 text-sm">HR Director</p>
+                      <div class="flex items-center mt-1">
+                        <a
+                          href="mailto:michael.thompson@elevateengineering.com"
+                          class="text-primary text-sm hover:underline mr-4"
+                          >michael.thompson@elevateengineering.com</a
+                        >
+                        <a
+                          href="tel:+13125557895"
+                          class="text-primary text-sm hover:underline"
+                          >+1 (312) 555-7895</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 bg-gray-200 !rounded-full flex items-center justify-center mr-3"
+                    >
+                      <i class="ri-user-3-line text-gray-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Amanda Rodriguez</h4>
+                      <p class="text-gray-600 text-sm">
+                        Talent Acquisition Specialist
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <a
+                          href="mailto:amanda.rodriguez@elevateengineering.com"
+                          class="text-primary text-sm hover:underline mr-4"
+                          >amanda.rodriguez@elevateengineering.com</a
+                        >
+                        <a
+                          href="tel:+13125557896"
+                          class="text-primary text-sm hover:underline"
+                          >+1 (312) 555-7896</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="bg-white p-6 !rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 !rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition"
+                >
+                  <i class="ri-linkedin-fill ri-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 !rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition"
+                >
+                  <i class="ri-twitter-fill ri-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 !rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition"
+                >
+                  <i class="ri-facebook-fill ri-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 !rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition"
+                >
+                  <i class="ri-instagram-fill ri-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 !rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition"
+                >
+                  <i class="ri-youtube-fill ri-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Our Location</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Visit our headquarters in downtown Chicago, conveniently located
+            near public transportation and major highways.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2">
+            <div
+              class="map-container h-96 !rounded-lg shadow-sm overflow-hidden"
+            ></div>
+          </div>
+
+          <div class="bg-gray-50 p-6 !rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Elevate Engineering HQ</h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center mt-1 mr-3 text-primary"
+                >
+                  <i class="ri-map-pin-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Address</h4>
+                  <address class="not-italic text-gray-600">
+                    123 Elevator Avenue, Suite 500<br />
+                    Chicago, IL 60601<br />
+                    United States
+                  </address>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center mt-1 mr-3 text-primary"
+                >
+                  <i class="ri-directions-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Directions</h4>
+                  <ul class="text-gray-600 space-y-1 text-sm">
+                    <li>• 2 blocks from State/Lake Station</li>
+                    <li>• 10 minutes from Union Station</li>
+                    <li>• 25 minutes from O'Hare Airport</li>
+                    <li>• Parking available in building garage</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center mt-1 mr-3 text-primary"
+                >
+                  <i class="ri-building-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Facilities</h4>
+                  <ul class="text-gray-600 space-y-1 text-sm">
+                    <li>• Visitor parking available</li>
+                    <li>• Wheelchair accessible</li>
+                    <li>• Electric vehicle charging stations</li>
+                    <li>• On-site showroom and testing facility</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="flex items-center justify-center bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition w-full"
+              >
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-navigation-fill"></i>
+                </div>
+                <span>Get Directions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Find answers to common questions about our services, processes, and
+            elevator solutions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <div class="bg-white !rounded-lg shadow-sm overflow-hidden">
+              <!-- FAQ Item 1 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >What types of elevator maintenance plans do you
+                    offer?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    We offer three tiers of maintenance plans: Basic, Premium,
+                    and Comprehensive. The Basic plan includes quarterly
+                    inspections and essential maintenance. Premium adds monthly
+                    inspections, priority response, and parts replacement.
+                    Comprehensive covers 24/7 monitoring, all repairs, and
+                    complete parts coverage. We can customize any plan to meet
+                    your specific needs and budget.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >How long does a typical elevator installation take?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Installation timelines vary based on elevator type, building
+                    complexity, and project scope. A standard commercial
+                    elevator typically takes 12-16 weeks from contract signing
+                    to final inspection. Residential elevators generally require
+                    8-10 weeks. Custom or high-rise installations may take
+                    longer. During your consultation, we'll provide a detailed
+                    timeline specific to your project requirements.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >What safety certifications do your elevators have?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    All our elevators comply with ASME A17.1/CSA B44 Safety Code
+                    for Elevators and Escalators. They're also certified to meet
+                    ADA requirements, UL standards for electrical components,
+                    and local building codes. Our products undergo rigorous
+                    testing for safety features including emergency braking
+                    systems, door sensors, and backup power. We provide full
+                    documentation of all certifications with every installation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >Do you offer financing options for new installations?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Yes, we partner with several financial institutions to offer
+                    flexible financing options. These include equipment leasing,
+                    installment plans, and project financing with competitive
+                    rates. For commercial clients, we also provide capital lease
+                    structures that may offer tax advantages. Our financial team
+                    can help determine which option best suits your situation
+                    and assist with the application process.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="accordion-item">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >What is your emergency response time?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Our average emergency response time is 30 minutes in
+                    metropolitan areas and 60-90 minutes in suburban or rural
+                    locations. For entrapments or critical safety issues, we
+                    prioritize immediate dispatch. Maintenance contract
+                    customers receive priority response. Our 24/7 emergency line
+                    connects you directly to technicians, not a call center,
+                    ensuring faster resolution of urgent situations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-white !rounded-lg shadow-sm overflow-hidden">
+              <!-- FAQ Item 6 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >Can you modernize our existing elevator system?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Yes, we specialize in elevator modernization projects. Our
+                    process begins with a comprehensive assessment of your
+                    current system to identify components that can be upgraded
+                    for improved reliability, energy efficiency, and passenger
+                    experience. Modernization can range from control system
+                    updates to complete cab renovations. We develop phased
+                    implementation plans to minimize disruption to building
+                    operations during the modernization process.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 7 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >What energy-efficient options do you offer?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    We offer several energy-efficient technologies including
+                    regenerative drives that capture energy during braking, LED
+                    lighting systems, sleep mode controls that reduce power
+                    consumption during idle periods, and variable frequency
+                    drives that optimize motor operation. These features can
+                    reduce elevator energy consumption by up to 40%. Many of our
+                    energy-efficient solutions qualify for utility rebates and
+                    contribute to LEED certification points.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 8 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >How often should elevators be inspected?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Elevators should undergo professional inspection at least
+                    quarterly, with monthly inspections recommended for
+                    high-traffic installations. Annual comprehensive inspections
+                    are required by most jurisdictions. Building staff should
+                    perform basic visual checks weekly. Our maintenance plans
+                    include regular inspections scheduled according to your
+                    elevator's usage patterns, age, and local code requirements
+                    to ensure optimal safety and performance.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 9 -->
+              <div class="accordion-item border-b border-gray-100">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >What is the warranty on your elevator installations?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Our standard warranty covers parts and labor for 2 years on
+                    new installations. Major components like motors and
+                    gearboxes carry extended warranties of 5-10 years. We also
+                    offer extended warranty options that can provide coverage
+                    for up to 10 years on the entire system. All warranties
+                    include quarterly maintenance visits to ensure continued
+                    optimal performance and compliance with warranty terms.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 10 -->
+              <div class="accordion-item">
+                <button
+                  class="accordion-header flex items-center justify-between w-full p-6 text-left"
+                >
+                  <span class="font-medium"
+                    >Do you service all elevator brands?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center accordion-icon transition-transform duration-200"
+                  >
+                    <i class="ri-arrow-down-s-line ri-lg"></i>
+                  </div>
+                </button>
+                <div class="accordion-content px-6 pb-6">
+                  <p class="text-gray-600">
+                    Yes, our technicians are trained to service and repair all
+                    major elevator brands including Otis, KONE, Schindler,
+                    ThyssenKrupp, and many others. We maintain an extensive
+                    parts inventory and have established relationships with
+                    suppliers for specialized components. Our team regularly
+                    updates their training to stay current with the latest
+                    elevator technologies across all manufacturers, ensuring we
+                    can provide expert service regardless of your elevator's
+                    make or model.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 bg-primary/5 p-6 !rounded-lg">
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center mr-4 text-primary"
+                >
+                  <i class="ri-question-line ri-2x"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold mb-2">
+                    Still Have Questions?
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Our team is ready to provide the answers and support you
+                    need.
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="tel:+13125557890"
+                      class="flex items-center justify-center bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition"
+                    >
+                      <div
+                        class="w-5 h-5 flex items-center justify-center mr-2"
+                      >
+                        <i class="ri-phone-line"></i>
+                      </div>
+                      <span>Call Us</span>
+                    </a>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center bg-white border border-gray-300 text-gray-700 px-5 py-2 !rounded-button whitespace-nowrap hover:bg-gray-50 transition"
+                    >
+                      <div
+                        class="w-5 h-5 flex items-center justify-center mr-2"
+                      >
+                        <i class="ri-mail-line"></i>
+                      </div>
+                      <span>Email Support</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-900 relative">
+      <div
+        class="absolute inset-0 opacity-20"
+        style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20blueprint%20or%20technical%20drawing%20of%20elevator%20components%2C%20blue%20tint%2C%20faded%20background%20for%20text%20overlay%2C%20engineering%20concept&width=1920&height=600&seq=11&orientation=landscape'); background-size: cover; background-position: center;"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to Elevate Your Project?
+        </h2>
+        <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+          From new installations to modernization and maintenance, our team is
+          here to provide the vertical transportation solutions you need.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            class="bg-primary text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap shadow-lg hover:bg-primary/90 transition"
+          >
+            Request a Quote
+          </button>
+          <button
+            class="bg-transparent border border-white text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-white/10 transition"
+          >
+            Schedule a Consultation
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >logo</a
+            >
+            <p class="text-gray-400 mb-6">
+              Elevating standards in vertical transportation since 1985.
+              Providing innovative elevator solutions for commercial,
+              residential, and industrial applications.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html" class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-400 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="Services.html" class="text-gray-400 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Project.html"
+                  data-readdy="true"
+                  class="text-gray-400 hover:text-white transition"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="text-gray-400 hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >New Installation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Modernization</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Maintenance</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Repair</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Consulting</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Safety Inspection</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Elevator Avenue, Suite 500<br />Chicago, IL 60601,
+                  USA</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+1 (312) 555-7890</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">info@elevateengineering.com</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h4 class="text-sm font-semibold mb-3">24/7 Emergency Service</h4>
+              <p class="text-gray-400">+1 (800) 555-0911</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 Elevate Engineering. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Privacy Policy</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Terms of Service</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Sitemap</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="headerScroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("bg-white", "shadow-md");
+            header.classList.remove("bg-transparent");
+
+            // Change text color when scrolled
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white", "hover:text-gray-300");
+              link.classList.add("text-gray-800", "hover:text-primary");
+            });
+
+            // Change logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.remove("text-white");
+            logo.classList.add("text-primary");
+
+            // Change menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.remove("text-white");
+              menuButton.classList.add("text-gray-800");
+            }
+          } else {
+            header.classList.remove("bg-white", "shadow-md");
+            header.classList.add("bg-transparent");
+
+            // Revert text color
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.add("text-white", "hover:text-gray-300");
+              link.classList.remove("text-gray-800", "hover:text-primary");
+            });
+
+            // Revert logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.add("text-white");
+            logo.classList.remove("text-primary");
+
+            // Revert menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.add("text-white");
+              menuButton.classList.remove("text-gray-800");
+            }
+          }
+        });
+      });
+    </script>
+
+    <script id="form-handler">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Form input animation
+        const formInputs = document.querySelectorAll("input, textarea, select");
+
+        formInputs.forEach((input) => {
+          // Initial state check
+          if (input.value) {
+            input.parentElement
+              .querySelector("label")
+              .classList.add("text-xs", "text-primary", "-translate-y-6");
+          }
+
+          // Focus event
+          input.addEventListener("focus", function () {
+            const label = this.parentElement.querySelector("label");
+            label.classList.add("text-xs", "text-primary", "-translate-y-6");
+          });
+
+          // Blur event
+          input.addEventListener("blur", function () {
+            const label = this.parentElement.querySelector("label");
+            if (!this.value) {
+              label.classList.remove("text-xs", "text-primary", "-translate-y-6");
+            }
+          });
+        });
+
+        // Form validation
+        const contactForm = document.querySelector("form");
+
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let isValid = true;
+          const requiredInputs = contactForm.querySelectorAll("[required]");
+
+          requiredInputs.forEach((input) => {
+            if (!input.value.trim()) {
+              isValid = false;
+              input.classList.add("border-red-500");
+              const label = input.parentElement.querySelector("label");
+              label.classList.add("text-red-500");
+            } else {
+              input.classList.remove("border-red-500");
+              const label = input.parentElement.querySelector("label");
+              label.classList.remove("text-red-500");
+            }
+          });
+
+          const emailInput = contactForm.querySelector("#email");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (emailInput.value && !emailPattern.test(emailInput.value)) {
+            isValid = false;
+            emailInput.classList.add("border-red-500");
+            const label = emailInput.parentElement.querySelector("label");
+            label.classList.add("text-red-500");
+          }
+
+          if (isValid) {
+            // Simulate form submission
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerHTML =
+              '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div> Sending...';
+
+            setTimeout(() => {
+              contactForm.reset();
+              submitButton.disabled = false;
+              submitButton.innerHTML = "Message Sent!";
+
+              setTimeout(() => {
+                submitButton.innerHTML = "Submit Message";
+              }, 2000);
+
+              // Reset labels
+              formInputs.forEach((input) => {
+                const label = input.parentElement.querySelector("label");
+                label.classList.remove("text-xs", "text-primary", "-translate-y-6");
+              });
+            }, 1500);
+          }
+        });
+      });
+    </script>
+
+    <script id="tab-handler">
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const tabId = this.getAttribute("data-tab");
+
+            // Remove active class from all buttons and contents
+            tabButtons.forEach((btn) => {
+              btn.classList.remove("text-primary", "border-primary");
+              btn.classList.add("text-gray-500", "border-transparent");
+            });
+
+            tabContents.forEach((content) => {
+              content.classList.remove("active");
+            });
+
+            // Add active class to clicked button and corresponding content
+            this.classList.add("text-primary", "border-primary");
+            this.classList.remove("text-gray-500", "border-transparent");
+            document.getElementById(`${tabId}-tab`).classList.add("active");
+          });
+        });
+      });
+    </script>
+
+    <script id="accordion-handler">
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+        accordionHeaders.forEach((header) => {
+          header.addEventListener("click", function () {
+            const accordionItem = this.parentElement;
+            const isActive = accordionItem.classList.contains("active");
+
+            // Close all accordion items
+            document.querySelectorAll(".accordion-item").forEach((item) => {
+              item.classList.remove("active");
+            });
+
+            // Toggle active class on clicked item
+            if (!isActive) {
+              accordionItem.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

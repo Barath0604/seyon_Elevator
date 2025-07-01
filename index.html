@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElevaTech - Raising Standards in Vertical Transport</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#2B4C7E", secondary: "#1B365D" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+          font-family: 'Roboto', sans-serif;
+      }
+      .hero-section {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=modern%2520elevator%2520in%2520a%2520luxury%2520building%2520with%2520glass%2520walls%2520and%2520steel%2520frame%252C%2520professional%2520photography%252C%2520high%2520resolution%252C%2520soft%2520lighting%252C%2520clean%2520industrial%2520look%252C%2520showing%2520technical%2520precision%2520and%2520engineering%2520excellence%252C%2520no%2520people%252C%2520blue%2520tint&width=1920&height=1080&seq=1&orientation=landscape');
+          background-size: cover;
+          background-position: center;
+      }
+      .stat-counter {
+          transition: all 0.3s ease;
+      }
+      .service-card {
+          transition: all 0.3s ease;
+      }
+      .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .project-card {
+          transition: all 0.3s ease;
+      }
+      .project-card:hover .project-overlay {
+          opacity: 1;
+      }
+      .project-overlay {
+          opacity: 0;
+          transition: all 0.3s ease;
+      }
+      input:focus, textarea:focus {
+          outline: none;
+          border-color: #2B4C7E;
+      }
+      .custom-checkbox {
+          position: relative;
+          padding-left: 30px;
+          cursor: pointer;
+          user-select: none;
+      }
+      .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+      .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #fff;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+      }
+      .custom-checkbox:hover input ~ .checkmark {
+          border-color: #2B4C7E;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+          background-color: #2B4C7E;
+          border-color: #2B4C7E;
+      }
+      .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+      }
+      .custom-checkbox .checkmark:after {
+          left: 6px;
+          top: 2px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header Navigation -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+>
+        <div class="flex items-center">
+          <a href="#" class="flex items-center space-x-2">
+            <img src="Images/logo1.jpeg" alt="ElevaTech Logo" class="h-16 w-auto" />
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-gray-300 font-medium"
+            >Home</a
+          >
+          <a href="about.html" class="text-white hover:text-gray-300 font-medium"
+            >About</a
+          >
+          <a href="Services.html" class="text-white hover:text-gray-300 font-medium"
+            >Services</a
+          >
+          <a href="Project.html" class="text-white hover:text-gray-300 font-medium"
+            >Projects</a
+          >
+          <a href="contact.html" class="text-white hover:text-gray-300 font-medium"
+            >Contact</a
+          >
+        </nav>
+        <div>
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+          >
+            Request Quote
+          </button>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="text-white w-10 h-10 flex items-center justify-center"
+          >
+            <i class="ri-menu-line ri-2x"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-4">
+          <nav class="flex flex-col space-y-4">
+            <a
+              href="index.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >About</a
+            >
+            <a
+              href="Services.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Services</a
+            >
+            <a
+              href="Project.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Projects</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-800 hover:text-primary font-medium py-2"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            Raising Standards in Vertical Transport
+          </h1>
+          <p class="text-xl text-white mb-8 opacity-90">
+            Innovative elevator solutions engineered for reliability, safety,
+            and performance.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >
+              Request a Quote
+            </button>
+            <button
+              class="bg-white text-primary px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white p-6 rounded shadow-sm text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 text-primary flex items-center justify-center"
+            >
+              <i class="ri-time-line ri-2x"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-gray-800 mb-2">
+              <span class="stat-counter" data-target="25">0</span>+
+            </h3>
+            <p class="text-gray-600">Years Experience</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow-sm text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 text-primary flex items-center justify-center"
+            >
+              <i class="ri-building-line ri-2x"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-gray-800 mb-2">
+              <span class="stat-counter" data-target="1500">0</span>+
+            </h3>
+            <p class="text-gray-600">Projects Completed</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow-sm text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 text-primary flex items-center justify-center"
+            >
+              <i class="ri-shield-check-line ri-2x"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-gray-800 mb-2">
+              <span class="stat-counter" data-target="100">0</span>%
+            </h3>
+            <p class="text-gray-600">Safety Compliance</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow-sm text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 text-primary flex items-center justify-center"
+            >
+              <i class="ri-customer-service-2-line ri-2x"></i>
+            </div>
+            <h3 class="text-4xl font-bold text-gray-800 mb-2">24/7</h3>
+            <p class="text-gray-600">Support Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <img
+              src="https://readdy.ai/api/search-image?query=professional%2520elevator%2520engineers%2520working%2520on%2520technical%2520drawings%2520and%2520blueprints%2520in%2520a%2520modern%2520office%2520environment%252C%2520showing%2520teamwork%2520and%2520expertise%252C%2520high%2520resolution%2520photography%252C%2520industrial%2520setting%2520with%2520blue%2520tones%252C%2520professional%2520lighting%252C%2520focus%2520on%2520detailed%2520work&width=800&height=600&seq=2&orientation=landscape"
+              alt="About ElevaTech"
+              class="rounded-lg shadow-lg w-full h-auto object-cover"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+              Excellence in Elevator Engineering Since 2000
+            </h2>
+            <p class="text-gray-600 mb-6">
+              ElevaTech has been at the forefront of elevator manufacturing and
+              installation for over two decades. Our commitment to quality,
+              safety, and innovation has made us a trusted partner for
+              commercial, residential, and industrial vertical transportation
+              solutions.
+            </p>
+            <p class="text-gray-600 mb-8">
+              With a team of highly skilled engineers and technicians, we
+              design, manufacture, install, and maintain elevator systems that
+              meet the highest industry standards and exceed client
+              expectations.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-check-line ri-lg"></i>
+                </div>
+                <span class="text-gray-700">ISO 9001 Certified</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-check-line ri-lg"></i>
+                </div>
+                <span class="text-gray-700">ASME A17.1 Compliant</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-check-line ri-lg"></i>
+                </div>
+                <span class="text-gray-700">EN 81 Standards</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Comprehensive Services
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            From design and manufacturing to installation and maintenance, we
+            provide end-to-end elevator solutions tailored to your specific
+            requirements.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-draft-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Design & Manufacturing
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Custom elevator design and precision manufacturing using
+              cutting-edge technology and premium materials for optimal
+              performance and longevity.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-tools-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Installation & Erection
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Professional installation services by certified technicians
+              ensuring safe, efficient, and compliant elevator systems for all
+              building types.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-settings-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Maintenance & Repair
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Comprehensive maintenance programs and prompt repair services to
+              ensure optimal performance, safety, and extended equipment
+              lifespan.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-refresh-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Modernization</h3>
+            <p class="text-gray-600 mb-6">
+              Upgrade existing elevator systems with the latest technology,
+              enhancing performance, energy efficiency, and compliance with
+              current standards.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-alarm-warning-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Emergency Services
+            </h3>
+            <p class="text-gray-600 mb-6">
+              24/7 emergency response team available to address critical issues
+              promptly, ensuring minimal downtime and passenger safety.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"
+            >
+              <i class="ri-file-list-3-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Compliance & Inspection
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Comprehensive inspection services and documentation to ensure your
+              elevator systems meet all regulatory requirements and safety
+              standards.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Featured Projects
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore our portfolio of successful elevator installations across
+            various sectors, showcasing our expertise and commitment to
+            excellence.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md relative"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%2520glass%2520elevator%2520in%2520a%2520luxury%2520hotel%2520lobby%252C%2520professional%2520architectural%2520photography%252C%2520showing%2520elegant%2520design%2520with%2520stainless%2520steel%2520accents%252C%2520soft%2520lighting%252C%2520high%2520resolution%252C%2520blue%2520tint%252C%2520no%2520people&width=600&height=400&seq=3&orientation=landscape"
+              alt="Luxury Hotel Project"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="project-overlay absolute inset-0 bg-primary/80 flex flex-col justify-end p-6"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                Grand Meridian Hotel
+              </h3>
+              <p class="text-white/90 mb-4">
+                Installation of 8 high-speed panoramic elevators
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Capacity: 1600kg</span
+                >
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Speed: 3.5 m/s</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md relative"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%2520commercial%2520building%2520with%2520multiple%2520glass%2520elevators%2520visible%2520from%2520exterior%252C%2520professional%2520architectural%2520photography%252C%2520showing%2520sleek%2520design%2520with%2520blue%2520glass%2520and%2520steel%2520structure%252C%2520daytime%252C%2520high%2520resolution%252C%2520no%2520people&width=600&height=400&seq=4&orientation=landscape"
+              alt="Office Tower Project"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="project-overlay absolute inset-0 bg-primary/80 flex flex-col justify-end p-6"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                Skyline Office Tower
+              </h3>
+              <p class="text-white/90 mb-4">
+                Complete elevator system for 45-story office building
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >12 Elevators</span
+                >
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Smart Dispatch</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md relative"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%2520hospital%2520elevator%2520with%2520medical%2520equipment%252C%2520professional%2520photography%252C%2520showing%2520spacious%2520design%2520with%2520stainless%2520steel%2520interior%252C%2520clean%2520clinical%2520environment%252C%2520high%2520resolution%252C%2520blue%2520accents%252C%2520no%2520people&width=600&height=400&seq=5&orientation=landscape"
+              alt="Hospital Project"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="project-overlay absolute inset-0 bg-primary/80 flex flex-col justify-end p-6"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                Central Medical Center
+              </h3>
+              <p class="text-white/90 mb-4">
+                Specialized medical elevators with emergency backup systems
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Medical Grade</span
+                >
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Bed Capacity</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md relative"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=luxury%2520residential%2520building%2520elevator%2520lobby%252C%2520professional%2520interior%2520photography%252C%2520showing%2520elegant%2520design%2520with%2520marble%2520floors%2520and%2520modern%2520elevator%2520doors%252C%2520warm%2520lighting%252C%2520high%2520resolution%252C%2520blue%2520accents%252C%2520no%2520people&width=600&height=400&seq=6&orientation=landscape"
+              alt="Residential Project"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="project-overlay absolute inset-0 bg-primary/80 flex flex-col justify-end p-6"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                The Residences at Park Avenue
+              </h3>
+              <p class="text-white/90 mb-4">
+                Luxury residential elevators with biometric access control
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Smart Home Integration</span
+                >
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Silent Operation</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md relative"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%2520shopping%2520mall%2520with%2520glass%2520panoramic%2520elevators%252C%2520professional%2520architectural%2520photography%252C%2520showing%2520spacious%2520atrium%2520with%2520multiple%2520levels%2520and%2520elevators%2520in%2520operation%252C%2520bright%2520lighting%252C%2520high%2520resolution%252C%2520blue%2520tint%252C%2520minimal%2520people&width=600&height=400&seq=7&orientation=landscape"
+              alt="Shopping Mall Project"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="project-overlay absolute inset-0 bg-primary/80 flex flex-col justify-end p-6"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                Westfield Shopping Center
+              </h3>
+              <p class="text-white/90 mb-4">
+                Panoramic glass elevators for multi-level retail complex
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >High Traffic</span
+                >
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Energy Efficient</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md relative"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=industrial%2520freight%2520elevator%2520in%2520a%2520warehouse%2520or%2520manufacturing%2520facility%252C%2520professional%2520industrial%2520photography%252C%2520showing%2520robust%2520design%2520with%2520heavy-duty%2520capacity%252C%2520industrial%2520lighting%252C%2520high%2520resolution%252C%2520blue%2520steel%2520structure%252C%2520no%2520people&width=600&height=400&seq=8&orientation=landscape"
+              alt="Industrial Project"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="project-overlay absolute inset-0 bg-primary/80 flex flex-col justify-end p-6"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                Global Manufacturing Plant
+              </h3>
+              <p class="text-white/90 mb-4">
+                Heavy-duty freight elevators for industrial application
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >5000kg Capacity</span
+                >
+                <span
+                  class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"
+                  >Rugged Design</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <button
+            class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+          >
+            View All Projects
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            What Our Clients Say
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hear from our satisfied clients about their experience working with
+            ElevaTech.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="flex items-center mb-6">
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "ElevaTech delivered our project on time and within budget. Their
+              attention to detail and commitment to safety was impressive. The
+              elevators have been running flawlessly since installation."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 mr-4"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Robert Johnson</h4>
+                <p class="text-gray-600 text-sm">
+                  Facility Manager, Skyline Office Tower
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="flex items-center mb-6">
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "The maintenance program from ElevaTech has significantly reduced
+              our downtime and extended the life of our elevator systems. Their
+              technicians are knowledgeable and professional."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 mr-4"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Sarah Thompson</h4>
+                <p class="text-gray-600 text-sm">
+                  Operations Director, Grand Meridian Hotel
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="flex items-center mb-6">
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "We chose ElevaTech for our hospital's specialized elevator needs,
+              and they exceeded our expectations. Their understanding of medical
+              facility requirements and emergency protocols was exceptional."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 mr-4"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Dr. Michael Chen</h4>
+                <p class="text-gray-600 text-sm">
+                  Chief of Operations, Central Medical Center
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-white mb-4">
+              Ready to Elevate Your Project?
+            </h2>
+            <p class="text-white/90 mb-6">
+              Contact us today for a consultation and discover how our elevator
+              solutions can meet your specific requirements.
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white"
+              >
+                <i class="ri-phone-line ri-lg"></i>
+              </div>
+              <div>
+                <p class="text-white/80 text-sm">Emergency Support</p>
+                <p class="text-white font-bold">+1 (800) 555-0123</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-gray-800 mb-6">
+              Request a Quote
+            </h3>
+            <form>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                    placeholder="John Smith"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="block text-gray-700 mb-2"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                    placeholder="(123) 456-7890"
+                  />
+                </div>
+                <div>
+                  <label for="project-type" class="block text-gray-700 mb-2"
+                    >Project Type</label
+                  >
+                  <div class="relative">
+                    <select
+                      id="project-type"
+                      class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary appearance-none pr-8"
+                    >
+                      <option value="">Select Project Type</option>
+                      <option value="new-installation">New Installation</option>
+                      <option value="modernization">Modernization</option>
+                      <option value="maintenance">Maintenance</option>
+                      <option value="repair">Repair</option>
+                    </select>
+                    <div
+                      class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none text-gray-600"
+                    >
+                      <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 mb-2"
+                  >Project Details</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                  placeholder="Please provide details about your project..."
+                ></textarea>
+              </div>
+              <div class="mb-6">
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <span class="text-gray-700 ml-2"
+                    >I agree to the terms and privacy policy</span
+                  >
+                </label>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white py-3 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+              >
+                Submit Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Certifications & Partners
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We maintain the highest industry standards and partner with leading
+            organizations to deliver excellence.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div
+            class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center text-primary"
+            >
+              <i class="ri-award-line ri-2x"></i>
+            </div>
+            <span class="ml-2 font-medium text-gray-700">ISO 9001</span>
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center text-primary"
+            >
+              <i class="ri-shield-check-line ri-2x"></i>
+            </div>
+            <span class="ml-2 font-medium text-gray-700">ASME A17.1</span>
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center text-primary"
+            >
+              <i class="ri-building-2-line ri-2x"></i>
+            </div>
+            <span class="ml-2 font-medium text-gray-700">EN 81</span>
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center text-primary"
+            >
+              <i class="ri-safety-certificate-line ri-2x"></i>
+            </div>
+            <span class="ml-2 font-medium text-gray-700">OSHA Certified</span>
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center text-primary"
+            >
+              <i class="ri-recycle-line ri-2x"></i>
+            </div>
+            <span class="ml-2 font-medium text-gray-700">Green Building</span>
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center text-primary"
+            >
+              <i class="ri-global-line ri-2x"></i>
+            </div>
+            <span class="ml-2 font-medium text-gray-700">NEII Member</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a
+              href="#"
+              class="text-3xl font-['Pacifico'] text-white mb-6 inline-block"
+              >ElevaTech</a
+            >
+            <p class="text-white/80 mb-6">
+              Innovative elevator solutions engineered for reliability, safety,
+              and performance since 2000.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Services.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Project.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Design & Manufacturing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Installation & Erection</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Maintenance & Repair</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Modernization</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Emergency Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/80 hover:text-white transition-all"
+                  >Compliance & Inspection</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-white/80 mr-3 mt-1"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-white/80"
+                  >123 Elevator Avenue, Suite 500<br />New York, NY 10001</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-white/80 mr-3"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-white/80">+1 (800) 555-0123</span>
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-white/80 mr-3"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-white/80">info@elevatech.com</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h4 class="text-white font-medium mb-3">
+                Subscribe to Our Newsletter
+              </h4>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="px-4 py-2 rounded-l-button bg-white/10 border-none text-white placeholder-white/60 flex-grow"
+                />
+                <button
+                  class="bg-primary px-4 py-2 rounded-r-button whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-white/20 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-white/70 text-sm mb-4 md:mb-0">
+              © 2025 ElevaTech. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-4">
+              <a
+                href="#"
+                class="text-white/70 text-sm hover:text-white transition-all"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-white/70 text-sm hover:text-white transition-all"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-white/70 text-sm hover:text-white transition-all"
+                >Sitemap</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="headerScroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("bg-white", "shadow-md");
+            header.classList.remove("bg-transparent");
+
+            // Change text color when scrolled
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white", "hover:text-gray-300");
+              link.classList.add("text-gray-800", "hover:text-primary");
+            });
+
+            // Change logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.remove("text-white");
+            logo.classList.add("text-primary");
+
+            // Change menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.remove("text-white");
+              menuButton.classList.add("text-gray-800");
+            }
+          } else {
+            header.classList.remove("bg-white", "shadow-md");
+            header.classList.add("bg-transparent");
+
+            // Revert text color
+            const navLinks = header.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+              link.classList.add("text-white", "hover:text-gray-300");
+              link.classList.remove("text-gray-800", "hover:text-primary");
+            });
+
+            // Revert logo color
+            const logo = header.querySelector(".font-['Pacifico']");
+            logo.classList.add("text-white");
+            logo.classList.remove("text-primary");
+
+            // Revert menu button color
+            const menuButton = header.querySelector("#mobile-menu-button");
+            if (menuButton) {
+              menuButton.classList.add("text-white");
+              menuButton.classList.remove("text-gray-800");
+            }
+          }
+        });
+      });
+    </script>
+
+    <script id="mobileMenu">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          if (mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.remove("hidden");
+            mobileMenuButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+          } else {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+          }
+        });
+      });
+    </script>
+
+    <script id="statsCounter">
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".stat-counter");
+
+        const countUp = (el) => {
+          const target = parseInt(el.getAttribute("data-target"));
+          const count = parseInt(el.innerText);
+          const increment = target / 30; // Adjust speed
+
+          if (count < target) {
+            el.innerText = Math.ceil(count + increment);
+            setTimeout(() => countUp(el), 30);
+          } else {
+            el.innerText = target;
+          }
+        };
+
+        const handleIntersection = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              countUp(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, {
+          threshold: 0.5,
+        });
+
+        counters.forEach((counter) => {
+          observer.observe(counter);
+        });
+      });
+    </script>
+  </body>
+</html>
